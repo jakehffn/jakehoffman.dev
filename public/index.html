@@ -18,6 +18,20 @@
                 font-display: swap;
             }
 
+            :root {
+                --color-left: #292828;
+                --color-header: #292828;
+                --color-content: #292828;
+                --color-title: #ea6962;
+                --color-emph: #ea6962;
+                --color-title-link-hover: #b85651a0; 
+                --color-desc: #d4be98;
+                --color-date: #d8a657;
+                --color-header-link: #d4be98;
+                --color-header-link-hover: #928374;
+                --color-left-link: #d4be98;
+                --color-left-link-hover: #928374;
+            }
 
             html, body{
                 height: 100%;
@@ -31,9 +45,9 @@
             }
 
             body {
-                background-color: #292828;
+                background-color: var(--color-content);
                 font-family:JetBrainsMono, 'Courier New', Courier, monospace;
-                color: #d4be98;
+                color: var(--color-desc);
                 display: inline-block;
                 
             }
@@ -44,7 +58,7 @@
 
             header {
                 margin: 0;
-                background-color: #292828;
+                background-color: var(--color-header);
                 position: fixed;
                 left: 0;
                 top: 0;
@@ -59,13 +73,13 @@
             }
 
             .link {
-                color: #d4be98;
+                color: var(--color-header-link);
                 text-decoration: none;
                 cursor: pointer;
             }
 
             .link:hover {
-                color: #928374;
+                color: var(--color-header-link-hover);
                 
             }
 
@@ -96,7 +110,7 @@
                 height: 100vh;
                 width: 270px;
                 z-index: 1;
-                background-color: #292828;
+                background-color: var(--color-left);
             }
 
             #left-top {
@@ -110,7 +124,7 @@
             }
 
             #emph-jake {
-                color: #ea6962;
+                color: var(--color-emph);
             }
 
             #left-bottom {
@@ -131,7 +145,7 @@
                 margin-left: auto;
                 margin-right: auto;
                 margin-bottom: 12px;
-                background-color: #292828;
+                background-color: var(--color-left);
                 border-radius: 50%;
 
                 background-image: url("images/ME.jpg");
@@ -164,7 +178,7 @@
 
             .entry-title {
                 font-weight: bold;
-                color: #ea6962;
+                color: var(--color-title);
             }
 
             .entry-content {
@@ -173,19 +187,19 @@
             }
 
             .entry-date {
-                color: #d8a657;
+                color: var(--color-date);
                 margin-bottom: 60px;
             }
 
             .entry-link {
                 text-decoration: none;
                 font-weight: bold;
-                color: #ea6962;
+                color: var(--color-title);
                 cursor: pointer;
             }
 
             .entry-link:hover {
-                color: #b85651a0;
+                color: var(--color-title-link-hover);
                 
             }
 
@@ -202,7 +216,7 @@
             <div id="left-top">
                 <div class="left-top">Jake Hoffman Jake Hoffman Jake Hoffman Jake Hoffman Jake Hoffman 
                     Jake Hoffman Jake Hoffman Jake Hoffman Jake Hoffman Jake Hoffman Jake Hoffman Jake Hoffman 
-                    Jake Hoffman Jake Hoffman <span id="emph-jake">Jake Hoffman</span> Jake Hoffman Jake Hoffman Jake Hoffman Jake Hoffman
+                    Jake Hoffman Jake Hoffman <span id="emph-jake" onclick="changeColors(1)">Jake Hoffman</span> Jake Hoffman Jake Hoffman Jake Hoffman Jake Hoffman
                     Jake Hoffman Jake Hoffman Jake Hoffman Jake Hoffman Jake Hoffman Jake Hoffman Jake Hoffman
                     Jake Hoffman Jake Hoffman Jake Hoffman Jake Hoffman Jake Hoffman Jake Hoffman Jake Hoffman
                     Jake Hoffman Jake Hoffman Jake Hoffman Jake Hoffman Jake Hoffman Jake Hoffman Jake Hoffman</div>
@@ -370,7 +384,7 @@
 
                 var html = [
                     '<div class="entry">',
-                        '<a class="entry-link" href="' + url + '">' + title + ' --</a>',
+                        '<a class="entry-link" href="' + url + '" target="_blank">' + title + ' --</a>',
                         '<div class="entry-date"><span class="tab"></span>' + date + '</div>'
                 ].join("\n");
 
@@ -390,7 +404,7 @@
 
                 var html = [
                     '<div class="entry">',
-                        '<a class="entry-link" href="' + url + '">' + title + ' --</a>',
+                        '<a class="entry-link" href="' + url + '" target="_blank">' + title + ' --</a>',
                         '<p class="entry-desc"></br><span class="tab"></span>' + desc + '</p></div>'
                 ].join("\n");
 
@@ -420,6 +434,42 @@
             }
 
             document.getElementById("thoughts").addEventListener("click", thoughts);
+
+            function changeColors(num) {
+                let root = document.documentElement;
+
+                switch (num) {
+                    case 0:
+                        root.style.setProperty('--color-left', "#292828");
+                        root.style.setProperty('--color-header', "#292828");
+                        root.style.setProperty('--color-content', "#292828");
+                        root.style.setProperty('--color-title', "#ea6962");
+                        root.style.setProperty('--color-emph', "#ea6962");
+                        root.style.setProperty('--color-title-link-hover', "#b85651a0");
+                        root.style.setProperty('--color-desc', "#d4be98");
+                        root.style.setProperty('--color-date', "#d8a657");
+                        root.style.setProperty('--color-header-link', "#d4be98");
+                        root.style.setProperty('--color-header-link-hover', "#928374");
+                        root.style.setProperty('--color-left-link', "#d4be98");
+                        root.style.setProperty('--color-left-link-hover', "#928374");
+                    break;
+                    case 1:
+                        root.style.setProperty('--color-left', "#282a36");
+                        root.style.setProperty('--color-header', "#282a36");
+                        root.style.setProperty('--color-content', "#282a36");
+                        // root.style.setProperty('--color-content', "#44475a");
+                        root.style.setProperty('--color-title', "#ff5555");
+                        root.style.setProperty('--color-emph', "#ff5555");
+                        root.style.setProperty('--color-title-link-hover', "#bd93f9");
+                        root.style.setProperty('--color-desc', "#f8f8f2");
+                        root.style.setProperty('--color-date', "#8be9fd");
+                        root.style.setProperty('--color-header-link', "#f8f8f2");
+                        root.style.setProperty('--color-header-link-hover', "#bd93f9");
+                        root.style.setProperty('--color-left-link', "#f8f8f2");
+                        root.style.setProperty('--color-left-link-hover', "#bd93f9");
+                    break;
+                }
+            }
 
             window.onload = function() {
                 document.getElementById("content").innerHTML = '';
