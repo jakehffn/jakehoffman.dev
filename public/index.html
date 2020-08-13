@@ -123,8 +123,21 @@
                 transform: rotate(90deg);
             }
 
+            .jake {
+                cursor: pointer;
+            }
+
+            .jake:hover {
+                color: var(--color-header-link-hover)
+            }
+
             #emph-jake {
                 color: var(--color-emph);
+                cursor: pointer;
+            }
+
+            #emph-jake:hover {
+                color: var(--color-title-link-hover);
             }
 
             #left-bottom {
@@ -214,12 +227,12 @@
     <body>
         <div class="left">
             <div id="left-top">
-                <div class="left-top">Jake Hoffman Jake Hoffman Jake Hoffman Jake Hoffman Jake Hoffman 
+                <!-- <div>Jake Hoffman Jake Hoffman Jake Hoffman Jake Hoffman Jake Hoffman 
                     Jake Hoffman Jake Hoffman Jake Hoffman Jake Hoffman Jake Hoffman Jake Hoffman Jake Hoffman 
                     Jake Hoffman Jake Hoffman <span id="emph-jake" onclick="changeColors(1)">Jake Hoffman</span> Jake Hoffman Jake Hoffman Jake Hoffman Jake Hoffman
                     Jake Hoffman Jake Hoffman Jake Hoffman Jake Hoffman Jake Hoffman Jake Hoffman Jake Hoffman
                     Jake Hoffman Jake Hoffman Jake Hoffman Jake Hoffman Jake Hoffman Jake Hoffman Jake Hoffman
-                    Jake Hoffman Jake Hoffman Jake Hoffman Jake Hoffman Jake Hoffman Jake Hoffman Jake Hoffman</div>
+                    Jake Hoffman Jake Hoffman Jake Hoffman Jake Hoffman Jake Hoffman Jake Hoffman Jake Hoffman</div> -->
             </div>
             <div id="left-bottom">
                 <div id="circle" class="left-bottom"></div>
@@ -266,7 +279,6 @@
                 appId: "1:22222103514:web:922fceb2b84f4c6b3716e3",
                 measurementId: "G-5SHY77NZ1S"
             };
-
             
             // // Initialize Firebase
             firebase.initializeApp(firebaseConfig);
@@ -282,7 +294,6 @@
                     console.log(errorMessage);
                 });
             }
-  
             const logout = (fn) => {
                 firebase.auth().signOut().then(function() {
                     console.log("Signed Out");
@@ -344,7 +355,6 @@
                     date: date
                 })
             }
-
             const addProject = (fn) => {
                 var title = prompt('Title', '');
                 var desc = prompt('Description', '');
@@ -358,7 +368,6 @@
                     url: url
                 })
             }
-
             const addThought = (fn) => {
                 var title = prompt('Title', '');
                 var content = prompt('Content', '');
@@ -391,7 +400,6 @@
                 document.getElementById("content").innerHTML = html + document.getElementById("content").innerHTML;
                 });
             }
-
             document.getElementById("links").addEventListener("click", links);
 
             const projects = (fn) => {
@@ -411,7 +419,6 @@
                 document.getElementById("content").innerHTML = html + document.getElementById("content").innerHTML;
                 });
             }
-
             document.getElementById("projects").addEventListener("click", projects);
 
             const thoughts = (fn) => {
@@ -432,14 +439,19 @@
                 document.getElementById("content").innerHTML = html + document.getElementById("content").innerHTML;
                 });
             }
-
             document.getElementById("thoughts").addEventListener("click", thoughts);
 
-            function changeColors(num) {
+            function setTheme(num) {
+
+                var jakeContainer = document.getElementById("left-top");
+                var specialJake;
+
+                
+
                 let root = document.documentElement;
 
                 switch (num) {
-                    case 0:
+                    case 14:
                         root.style.setProperty('--color-left', "#292828");
                         root.style.setProperty('--color-header', "#292828");
                         root.style.setProperty('--color-content', "#292828");
@@ -452,8 +464,9 @@
                         root.style.setProperty('--color-header-link-hover', "#928374");
                         root.style.setProperty('--color-left-link', "#d4be98");
                         root.style.setProperty('--color-left-link-hover', "#928374");
+                        specialJake = 14;
                     break;
-                    case 1:
+                    case 12:
                         root.style.setProperty('--color-left', "#282a36");
                         root.style.setProperty('--color-header', "#282a36");
                         root.style.setProperty('--color-content', "#282a36");
@@ -467,13 +480,56 @@
                         root.style.setProperty('--color-header-link-hover', "#bd93f9");
                         root.style.setProperty('--color-left-link', "#f8f8f2");
                         root.style.setProperty('--color-left-link-hover', "#bd93f9");
+                        specialJake = 12;
                     break;
+                    case 29:
+                        root.style.setProperty('--color-left', "#171812");
+                        root.style.setProperty('--color-header', "#171812");
+                        root.style.setProperty('--color-content', "#171812");
+                        root.style.setProperty('--color-title', "#A6E22E");
+                        root.style.setProperty('--color-emph', "#F92672");
+                        root.style.setProperty('--color-title-link-hover', "#6e961c");
+                        root.style.setProperty('--color-desc', "#F8F8F2");
+                        root.style.setProperty('--color-date', "#F92672");
+                        root.style.setProperty('--color-header-link', "#F8F8F2");
+                        root.style.setProperty('--color-header-link-hover', "#6e961c");
+                        root.style.setProperty('--color-left-link', "#F8F8F2");
+                        root.style.setProperty('--color-left-link-hover', "#F8F8F2");
+                        specialJake = 29;
+                    break;
+                    default:
+                        root.style.setProperty('--color-left', "#292828");
+                        root.style.setProperty('--color-header', "#292828");
+                        root.style.setProperty('--color-content', "#292828");
+                        root.style.setProperty('--color-title', "#ea6962");
+                        root.style.setProperty('--color-emph', "#ea6962");
+                        root.style.setProperty('--color-title-link-hover', "#b85651a0");
+                        root.style.setProperty('--color-desc', "#d4be98");
+                        root.style.setProperty('--color-date', "#d8a657");
+                        root.style.setProperty('--color-header-link', "#d4be98");
+                        root.style.setProperty('--color-header-link-hover', "#928374");
+                        root.style.setProperty('--color-left-link', "#d4be98");
+                        root.style.setProperty('--color-left-link-hover', "#928374");
+                        specialJake = 14;
+                    break;
+                }
+
+                jakeContainer.innerHTML = '';
+
+                for (i = 0; i < 40; i++) {
+                    if (i == specialJake) {
+                        jakeContainer.innerHTML += '<span id="emph-jake" class="jake"> Jake Hoffman</span>';
+                    } else {
+                        jakeContainer.innerHTML += '<span onclick="setTheme(' + i + ')" class="jake"> Jake Hoffman</span>';
+                    }
+                    
                 }
             }
 
             window.onload = function() {
                 document.getElementById("content").innerHTML = '';
                 thoughts();
+                setTheme(14);
             }
 
             const debounce = (fn) => {
