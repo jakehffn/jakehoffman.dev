@@ -6,15 +6,6 @@
         <link rel="preload" as="font" href="/fonts/JetBrainsMono-Regular.woff2" type="font/woff2" crossorigin="anonymous">
         <link rel="preload" as="font" href="/fonts/JetBrainsMono-Regular.woff" type="font/woff" crossorigin="anonymous">
         <title>Jake Hoffman</title>
-        <!-- update the version number as needed -->
-        <script defer src="/__/firebase/7.17.2/firebase-app.js"></script>
-        <!-- include only the Firebase features as you need -->
-        <script defer src="/__/firebase/7.17.2/firebase-auth.js"></script>
-        <script defer src="/__/firebase/7.17.2/firebase-database.js"></script>
-        <script defer src="/__/firebase/7.17.2/firebase-messaging.js"></script>
-        <script defer src="/__/firebase/7.17.2/firebase-storage.js"></script>
-        <!-- initialize the SDK after all desired features are loaded -->
-        <script defer src="/__/firebase/init.js"></script>
 
         <style>
             @font-face {
@@ -116,6 +107,10 @@
                 left: -430px;
             }
 
+            #emph-jake {
+                color: #ea6962;
+            }
+
             .left-top {
                 transform: rotate(90deg);
 
@@ -141,6 +136,11 @@
                 margin-bottom: 12px;
                 background-color: #d4be98;
                 border-radius: 50%;
+
+                background-repeat: no-repeat;
+                background-size: auto;
+                background-position: center;
+                background-size: 180px;
             }
 
             html:not([data-scroll='0']) header {
@@ -153,21 +153,42 @@
             #content {
                 margin-top: 84px;
                 margin-left: 280px;
-                padding-left: 200px;
-                padding-right: 200px;
+                padding: 100px 200px 0px 200px;
                 overflow: auto;
             }
 
-            .entry {
-                margin-top: 100px;
-            }
+            /* .entry {
+                margin-top: 10px;
+            } */
 
             .entry-title {
                 font-weight: bold;
+                color: #ea6962;
             }
 
             .entry-content {
+                margin-top: 0px;
                 margin-left: 40px;
+            }
+
+            .entry-date {
+                color: #d8a657;
+                margin-bottom: 100px;
+            }
+
+            .entry-link {
+                text-decoration: none;
+                font-weight: bold;
+                color: #ea6962;
+            }
+
+            .entry-link:hover {
+                color: #b85651a0;
+            }
+
+            .entry-desc {
+                margin-top: 0px;
+                margin-bottom: 100px;
             }
 
         </style>
@@ -178,7 +199,7 @@
             <div id="left-top">
                 <div class="left-top">Jake Hoffman Jake Hoffman Jake Hoffman Jake Hoffman Jake Hoffman 
                     Jake Hoffman Jake Hoffman Jake Hoffman Jake Hoffman Jake Hoffman Jake Hoffman Jake Hoffman 
-                    Jake Hoffman Jake Hoffman Jake Hoffman Jake Hoffman Jake Hoffman Jake Hoffman Jake Hoffman
+                    Jake Hoffman Jake Hoffman <span id="emph-jake">Jake Hoffman</span> Jake Hoffman Jake Hoffman Jake Hoffman Jake Hoffman
                     Jake Hoffman Jake Hoffman Jake Hoffman Jake Hoffman Jake Hoffman Jake Hoffman Jake Hoffman
                     Jake Hoffman Jake Hoffman Jake Hoffman Jake Hoffman Jake Hoffman Jake Hoffman Jake Hoffman
                     Jake Hoffman Jake Hoffman Jake Hoffman Jake Hoffman Jake Hoffman Jake Hoffman Jake Hoffman</div>
@@ -192,77 +213,118 @@
         <div class="right">
             <header>
                 <div id="header-right">
-                    <ul class="header-right"><a class="link" href="#">Links</a></ul>
-                    <ul class="header-right"><a class="link" href="#">Projects</a></ul>
-                    <ul class="header-right"><a class="link" href="#">Thoughts</a></ul>
+                    <ul class="header-right"><a class="link" id="links">Links</a></ul>
+                    <ul class="header-right"><a class="link" id="projects">Projects</a></ul>
+                    <ul class="header-right"><a class="link" id="thoughts">Thoughts</a></ul>
                 </div>
             </header>
-            <div id="content">
-                <div class="entry">
-                    <div class="entry-title">This page is really getting somewhere --</div>
-                <p class="entry-content"></br><span class="tab"></span>Here are some words. I have only worked on this today. 
-                    I am having trouble understanding how javaScript interacts with the webpage. Admittedly, I have not done much to try to 
-                    understand beyond reading stack-overflow forums, but I find it more confusing than standard programming.</p>
-                </div>
-                <div class="entry">
-                    <div class="entry-title">I need some content for this webpage to look like something --</div>
-                <p class="entry-content"></br><span class="tab"></span>Here are some words. I have only worked on this today. 
-                    I am having trouble understanding how javaScript interacts with the webpage. Admittedly, I have not done much to try to 
-                    understand beyond reading stack-overflow forums, but I find it more confusing than standard programming. </p>
-                </div>
-                <div class="entry">
-                    <div class="entry-title">I need some content for this webpage to look like something --</div>
-                <p class="entry-content"></br><span class="tab"></span>Here are some words. I have only worked on this today. 
-                    I am having trouble understanding how javaScript interacts with the webpage. Admittedly, I have not done much to try to 
-                    understand beyond reading stack-overflow forums, but I find it more confusing than standard programming. </p>
-                </div>
-                <div class="entry">
-                    <div class="entry-title">I need some content for this webpage to look like something --</div>
-                <p class="entry-content"></br><span class="tab"></span>Here are some words. I have only worked on this today. 
-                    I am having trouble understanding how javaScript interacts with the webpage. Admittedly, I have not done much to try to 
-                    understand beyond reading stack-overflow forums, but I find it more confusing than standard programming. </p>
-                </div>
-                <div class="entry">
-                    <div class="entry-title">I need some content for this webpage to look like something --</div>
-                <p class="entry-content"></br><span class="tab"></span>Here are some words. I have only worked on this today. 
-                    I am having trouble understanding how javaScript interacts with the webpage. Admittedly, I have not done much to try to 
-                    understand beyond reading stack-overflow forums, but I find it more confusing than standard programming. </p>
-                </div>
-                <div class="entry">
-                    <div class="entry-title">I need some content for this webpage to look like something --</div>
-                <p class="entry-content"></br><span class="tab"></span>Here are some words. I have only worked on this today. 
-                    I am having trouble understanding how javaScript interacts with the webpage. Admittedly, I have not done much to try to 
-                    understand beyond reading stack-overflow forums, but I find it more confusing than standard programming. </p>
-                </div>
-                <div class="entry">
-                    <div class="entry-title">I need some content for this webpage to look like something --</div>
-                <p class="entry-content"></br><span class="tab"></span>Here are some words. I have only worked on this today. 
-                    I am having trouble understanding how javaScript interacts with the webpage. Admittedly, I have not done much to try to 
-                    understand beyond reading stack-overflow forums, but I find it more confusing than standard programming. </p>
-                </div>
-                <div class="entry">
-                    <div class="entry-title">I need some content for this webpage to look like something --</div>
-                <p class="entry-content"></br><span class="tab"></span>Here are some words. I have only worked on this today. 
-                    I am having trouble understanding how javaScript interacts with the webpage. Admittedly, I have not done much to try to 
-                    understand beyond reading stack-overflow forums, but I find it more confusing than standard programming. </p>
-                </div>
-                <div class="entry">
-                    <div class="entry-title">I need some content for this webpage to look like something --</div>
-                <p class="entry-content"></br><span class="tab"></span>Here are some words. I have only worked on this today. 
-                    I am having trouble understanding how javaScript interacts with the webpage. Admittedly, I have not done much to try to 
-                    understand beyond reading stack-overflow forums, but I find it more confusing than standard programming. </p>
-                </div>
-                <div class="entry">
-                    <div class="entry-title">I need some content for this webpage to look like something --</div>
-                <p class="entry-content"></br><span class="tab"></span>Here are some words. I have only worked on this today. 
-                    I am having trouble understanding how javaScript interacts with the webpage. Admittedly, I have not done much to try to 
-                    understand beyond reading stack-overflow forums, but I find it more confusing than standard programming. </p>
-                </div>
-            </div>
+            <div id="content"></div>
         </div>
         
+        <script src="/__/firebase/7.17.2/firebase.js"></script>
+        <!-- <script src="https://www.gstatic.com/firebasejs/7.2.0/firebase.js"></script> -->
+
+        <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+        <!-- <script src="/__/firebase/7.17.2/firebase-analytics.js"></script> -->
+
+        <!-- Add Firebase products that you want to use -->
+        <script src="/__/firebase/7.17.2/firebase-auth.js"></script>
+        <script src="/__/firebase/7.17.2/firebase-firestore.js"></script>
+        <script defer src="/__/firebase/7.17.2/firebase-database.js"></script>
         
+        <script defer src="/__/firebase/7.17.2/firebase-auth.js"></script>
+        <script defer src="/__/firebase/7.17.2/firebase-storage.js"></script>
+
+        <script defer src="/__/firebase/init.js"></script>
+
         <script>
+            // Your web app's Firebase configuration
+            var firebaseConfig = {
+                apiKey: "AIzaSyDSFuWCK3w0bkM-K8atbePTZ2wezlGQ5JU",
+                authDomain: "jakethoffman-7b7ab.firebaseapp.com",
+                databaseURL: "https://jakethoffman-7b7ab.firebaseio.com",
+                projectId: "jakethoffman-7b7ab",
+                storageBucket: "jakethoffman-7b7ab.appspot.com",
+                messagingSenderId: "22222103514",
+                appId: "1:22222103514:web:922fceb2b84f4c6b3716e3",
+                measurementId: "G-5SHY77NZ1S"
+            };
+
+            // // Initialize Firebase
+            firebase.initializeApp(firebaseConfig);
+  
+            firebase.storage().ref("ME.jpg").getDownloadURL().then( 
+            function(url) { 
+
+            document.getElementById("circle").style.backgroundImage = "url(" + url + ")";
+            });
+
+            const links = (fn) => {
+                document.getElementById("content").innerHTML = '';
+                firebase.database().ref("links").on("child_added", function(snap){
+
+                let title = snap.val().title;
+                let date = snap.val().date;
+                let url = snap.val().url;
+
+                var html = [
+                    '<div class="entry">',
+                        '<a class="entry-link" href="' + url + '">' + title + ' --</a>',
+                        '<div class="entry-date"><span class="tab"></span>' + date + '</div>'
+                ].join("\n");
+
+                document.getElementById("content").innerHTML += html;
+                });
+            }
+
+            document.getElementById("links").addEventListener("click", links);
+
+            const projects = (fn) => {
+                document.getElementById("content").innerHTML = '';
+                firebase.database().ref("projects").on("child_added", function(snap){
+
+                let title = snap.val().title;
+                let desc = snap.val().desc;
+                let url = snap.val().url;
+
+                var html = [
+                    '<div class="entry">',
+                        '<a class="entry-link" href="' + url + '">' + title + ' --</a>',
+                        '<p class="entry-desc"></br><span class="tab"></span>' + desc + '</p></div>'
+                ].join("\n");
+
+                document.getElementById("content").innerHTML += html;
+                });
+            }
+
+            document.getElementById("projects").addEventListener("click", projects);
+
+            const thoughts = (fn) => {
+                document.getElementById("content").innerHTML = '';
+                firebase.database().ref("thoughts").on("child_added", function(snap){
+
+                let title = snap.val().title;
+                let content = snap.val().content;
+                let date = snap.val().date;
+
+                var html = [
+                    '<div class="entry">',
+                        '<div class="entry-title">' + title + ' --</div>',
+                        '<p class="entry-content"></br><span class="tab"></span>' + content + '</p></div>',
+                        '<div class="entry-date"><span class="tab"></span>' + date + '</div>'
+                ].join("\n");
+
+                document.getElementById("content").innerHTML += html;
+                });
+            }
+
+            document.getElementById("thoughts").addEventListener("click", thoughts);
+
+            window.onload = function() {
+                document.getElementById("content").innerHTML = '';
+                thoughts();
+            }
+
             const debounce = (fn) => {
                 let frame;
 
