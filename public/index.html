@@ -31,6 +31,7 @@
                 --color-header-link-hover: #928374;
                 --color-left-link: #d4be98;
                 --color-left-link-hover: #928374;
+                --color-photo-filter: #6b5d4633;
             }
 
             html, body{
@@ -162,11 +163,21 @@
                 border-radius: 50%;
 
                 background-image: url("images/ME.jpg");
-
                 background-repeat: no-repeat;
                 background-size: auto;
                 background-position: center;
                 background-size: 180px;
+
+            }
+
+            #photo {
+                width: 180px;
+                height: 180px;
+                margin-left: auto;
+                margin-right: auto;
+                margin-bottom: 12px;
+                background-color: var(--color-photo-filter);
+                border-radius: 50%;
             }
 
             html:not([data-scroll='0']) header {
@@ -185,10 +196,6 @@
                 z-index: 10;
             }
 
-            /* .entry {
-                margin-top: 10px;
-            } */
-
             .entry-title {
                 font-weight: bold;
                 color: var(--color-title);
@@ -202,6 +209,7 @@
             .entry-date {
                 color: var(--color-date);
                 margin-bottom: 60px;
+                margin-left: 40px;
             }
 
             .entry-link {
@@ -226,16 +234,9 @@
     </head>
     <body>
         <div class="left">
-            <div id="left-top">
-                <!-- <div>Jake Hoffman Jake Hoffman Jake Hoffman Jake Hoffman Jake Hoffman 
-                    Jake Hoffman Jake Hoffman Jake Hoffman Jake Hoffman Jake Hoffman Jake Hoffman Jake Hoffman 
-                    Jake Hoffman Jake Hoffman <span id="emph-jake" onclick="changeColors(1)">Jake Hoffman</span> Jake Hoffman Jake Hoffman Jake Hoffman Jake Hoffman
-                    Jake Hoffman Jake Hoffman Jake Hoffman Jake Hoffman Jake Hoffman Jake Hoffman Jake Hoffman
-                    Jake Hoffman Jake Hoffman Jake Hoffman Jake Hoffman Jake Hoffman Jake Hoffman Jake Hoffman
-                    Jake Hoffman Jake Hoffman Jake Hoffman Jake Hoffman Jake Hoffman Jake Hoffman Jake Hoffman</div> -->
-            </div>
+            <div id="left-top"></div>
             <div id="left-bottom">
-                <div id="circle" class="left-bottom"></div>
+                <div id="circle" class="left-bottom"><div id="photo"></div></div>
                 <div class="left-bottom"><a class="link" href="https://github.com/Jake-Hoffman">@GitHub</a></div>
                 <div class="left-bottom"><a class="link" href="https://twitter.com/_OkWater">@Twitter</a></div>
             </div>
@@ -394,7 +395,7 @@
                 var html = [
                     '<div class="entry">',
                         '<a class="entry-link" href="' + url + '" target="_blank">' + title + ' --</a>',
-                        '<div class="entry-date"><span class="tab"></span>' + date + '</div>'
+                        '<div class="entry-date">' + date + '</div>'
                 ].join("\n");
 
                 document.getElementById("content").innerHTML = html + document.getElementById("content").innerHTML;
@@ -413,7 +414,7 @@
                 var html = [
                     '<div class="entry">',
                         '<a class="entry-link" href="' + url + '" target="_blank">' + title + ' --</a>',
-                        '<p class="entry-desc"></br><span class="tab"></span>' + desc + '</p></div>'
+                        '<p class="entry-content"></br><span class="tab"></span>' + desc + '</p></div>'
                 ].join("\n");
 
                 document.getElementById("content").innerHTML = html + document.getElementById("content").innerHTML;
@@ -433,7 +434,7 @@
                     '<div class="entry">',
                         '<div class="entry-title">' + title + ' --</div>',
                         '<p class="entry-content"></br><span class="tab"></span>' + content + '</p></div>',
-                        '<div class="entry-date"><span class="tab"></span>' + date + '</div>'
+                        '<div class="entry-date">' + date + '</div>'
                 ].join("\n");
 
                 document.getElementById("content").innerHTML = html + document.getElementById("content").innerHTML;
@@ -443,15 +444,18 @@
 
             function setTheme(num) {
 
+                num = parseInt(num);
+
+                localStorage.setItem('theme', num);
+                console.log(localStorage.getItem('theme'));
                 var jakeContainer = document.getElementById("left-top");
                 var specialJake;
-
-                
 
                 let root = document.documentElement;
 
                 switch (num) {
                     case 14:
+                        //Gruvbox-material
                         root.style.setProperty('--color-left', "#292828");
                         root.style.setProperty('--color-header', "#292828");
                         root.style.setProperty('--color-content', "#292828");
@@ -464,15 +468,17 @@
                         root.style.setProperty('--color-header-link-hover', "#928374");
                         root.style.setProperty('--color-left-link', "#d4be98");
                         root.style.setProperty('--color-left-link-hover', "#928374");
+                        root.style.setProperty('--color-photo-filter', '#6b5d4633');
                         specialJake = 14;
                     break;
                     case 12:
+                        //dracula
                         root.style.setProperty('--color-left', "#282a36");
                         root.style.setProperty('--color-header', "#282a36");
                         root.style.setProperty('--color-content', "#282a36");
                         // root.style.setProperty('--color-content', "#44475a");
                         root.style.setProperty('--color-title', "#ff5555");
-                        root.style.setProperty('--color-emph', "#ff5555");
+                        root.style.setProperty('--color-emph', "#f1fa8c");
                         root.style.setProperty('--color-title-link-hover', "#bd93f9");
                         root.style.setProperty('--color-desc', "#f8f8f2");
                         root.style.setProperty('--color-date', "#8be9fd");
@@ -480,9 +486,11 @@
                         root.style.setProperty('--color-header-link-hover', "#bd93f9");
                         root.style.setProperty('--color-left-link', "#f8f8f2");
                         root.style.setProperty('--color-left-link-hover', "#bd93f9");
+                        root.style.setProperty('--color-photo-filter', '#464e6b33');
                         specialJake = 12;
                     break;
                     case 29:
+                        //monokai
                         root.style.setProperty('--color-left', "#171812");
                         root.style.setProperty('--color-header', "#171812");
                         root.style.setProperty('--color-content', "#171812");
@@ -495,9 +503,11 @@
                         root.style.setProperty('--color-header-link-hover', "#6e961c");
                         root.style.setProperty('--color-left-link', "#F8F8F2");
                         root.style.setProperty('--color-left-link-hover', "#F8F8F2");
+                        root.style.setProperty('--color-photo-filter', '#4c2a3833');
                         specialJake = 29;
                     break;
                     default:
+                        //Gruvbox-material
                         root.style.setProperty('--color-left', "#292828");
                         root.style.setProperty('--color-header', "#292828");
                         root.style.setProperty('--color-content', "#292828");
@@ -510,6 +520,7 @@
                         root.style.setProperty('--color-header-link-hover', "#928374");
                         root.style.setProperty('--color-left-link', "#d4be98");
                         root.style.setProperty('--color-left-link-hover', "#928374");
+                        root.style.setProperty('--color-photo-filter', '#6b5d4633');
                         specialJake = 14;
                     break;
                 }
@@ -529,8 +540,8 @@
             window.onload = function() {
                 document.getElementById("content").innerHTML = '';
                 thoughts();
-                setTheme(14);
-            }
+                setTheme(localStorage.getItem('theme'));
+            };
 
             const debounce = (fn) => {
                 let frame;
