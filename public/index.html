@@ -23,7 +23,8 @@
                 --color-header: #292828;
                 --color-content: #292828;
                 --color-title: #ea6962;
-                --color-emph: #ea6962;
+                --color-jake-emph: #ea6962;
+                --color-jake: #d4be98;
                 --color-title-link-hover: #b85651a0; 
                 --color-desc: #d4be98;
                 --color-date: #d8a657;
@@ -73,13 +74,24 @@
                 padding-left: 2em;
             }
 
-            .link {
+            .left-link {
+                color: var(--color-left-link);
+                text-decoration: none;
+                cursor: pointer;
+            }
+
+            .left-link:hover {
+                color: var(--color-left-link-hover);
+                
+            }
+
+            .header-link {
                 color: var(--color-header-link);
                 text-decoration: none;
                 cursor: pointer;
             }
 
-            .link:hover {
+            .header-link:hover {
                 color: var(--color-header-link-hover);
                 
             }
@@ -125,6 +137,7 @@
             }
 
             .jake {
+                color: var(--color-jake);
                 cursor: pointer;
             }
 
@@ -133,12 +146,12 @@
             }
 
             #emph-jake {
-                color: var(--color-emph);
+                color: var(--color-jake-emph);
                 cursor: pointer;
             }
 
             #emph-jake:hover {
-                color: var(--color-title-link-hover);
+                color: var(--color-header-link-hover);
             }
 
             #left-bottom {
@@ -236,16 +249,16 @@
             <div id="left-top"></div>
             <div id="left-bottom">
                 <div id="circle" class="left-bottom"><div id="photo"></div></div>
-                <div class="left-bottom"><a class="link" href="https://github.com/Jake-Hoffman">@GitHub</a></div>
-                <div class="left-bottom"><a class="link" href="https://twitter.com/_OkWater">@Twitter</a></div>
+                <div class="left-bottom"><a class="left-link" href="https://github.com/Jake-Hoffman">@GitHub</a></div>
+                <div class="left-bottom"><a class="left-link" href="https://twitter.com/_OkWater">@Twitter</a></div>
             </div>
         </div>
         <div class="right">
             <header>
                 <div id="header-right">
-                    <ul class="header-right"><a class="link" id="links">Links</a></ul>
-                    <ul class="header-right"><a class="link" id="projects">Projects</a></ul>
-                    <ul class="header-right"><a class="link" id="thoughts">Thoughts</a></ul>
+                    <ul class="header-right"><a class="header-link" id="links">Links</a></ul>
+                    <ul class="header-right"><a class="header-link" id="projects">Projects</a></ul>
+                    <ul class="header-right"><a class="header-link" id="thoughts">Thoughts</a></ul>
                 </div>
             </header>
             <div id="content"></div>
@@ -292,6 +305,7 @@
                     var errorMessage = error.message;
 
                     console.log(errorMessage);
+                    return errorCode;
                 });
             }
             const logout = (fn) => {
@@ -452,31 +466,50 @@
                 num = parseInt(num);
 
                 switch (num) {
-                    case 14:
-                        //Gruvbox-material
-                        root.style.setProperty('--color-left', "#292828");
-                        root.style.setProperty('--color-header', "#292828");
-                        root.style.setProperty('--color-content', "#292828");
-                        root.style.setProperty('--color-title', "#ea6962");
-                        root.style.setProperty('--color-emph', "#ea6962");
-                        root.style.setProperty('--color-title-link-hover', "#b85651a0");
-                        root.style.setProperty('--color-desc', "#d4be98");
-                        root.style.setProperty('--color-date', "#d8a657");
-                        root.style.setProperty('--color-header-link', "#d4be98");
-                        root.style.setProperty('--color-header-link-hover', "#928374");
-                        root.style.setProperty('--color-left-link', "#d4be98");
-                        root.style.setProperty('--color-left-link-hover', "#928374");
-                        root.style.setProperty('--color-photo-filter', '#6b5d4633');
-                        specialJake = 14;
+                    //Good water-level
+                    case 2:
+                        root.style.setProperty('--color-left', "#2700ff");
+                        root.style.setProperty('--color-header', "#00a78e");
+                        root.style.setProperty('--color-content', "#36b19e");
+                        root.style.setProperty('--color-title', "#d85557");
+                        root.style.setProperty('--color-jake-emph', "#d85557");
+                        root.style.setProperty('--color-jake', '#94c598');
+                        root.style.setProperty('--color-title-link-hover', "#ffffff");
+                        root.style.setProperty('--color-desc', "#ceb894");
+                        root.style.setProperty('--color-date', "#94c598");
+                        root.style.setProperty('--color-header-link', "#ceb894");
+                        root.style.setProperty('--color-header-link-hover', "#f0b1d0");
+                        root.style.setProperty('--color-left-link', "#ceb894");
+                        root.style.setProperty('--color-left-link-hover', "#f0b1d0");
+                        root.style.setProperty('--color-photo-filter', '#bb18af24');
+                        specialJake = 2;
                     break;
+                    //Oceanic
+                    case 4:
+                        root.style.setProperty('--color-left', "#00a78e");
+                        root.style.setProperty('--color-header', "#00a78e");
+                        root.style.setProperty('--color-content', "#36b19e");
+                        root.style.setProperty('--color-title', "#413e94");
+                        root.style.setProperty('--color-jake-emph', "#413e94");
+                        root.style.setProperty('--color-jake', '#94c598');
+                        root.style.setProperty('--color-title-link-hover', "#ffffff");
+                        root.style.setProperty('--color-desc', "#ffffff");
+                        root.style.setProperty('--color-date', "#94c598");
+                        root.style.setProperty('--color-header-link', "#ffffff");
+                        root.style.setProperty('--color-header-link-hover', "#f0b1d0");
+                        root.style.setProperty('--color-left-link', "#ffffff");
+                        root.style.setProperty('--color-left-link-hover', "#f0b1d0");
+                        root.style.setProperty('--color-photo-filter', '#bb18af24');
+                        specialJake = 4;
+                    break;
+                    //dracula
                     case 12:
-                        //dracula
                         root.style.setProperty('--color-left', "#282a36");
                         root.style.setProperty('--color-header', "#282a36");
                         root.style.setProperty('--color-content', "#282a36");
-                        // root.style.setProperty('--color-content', "#44475a");
                         root.style.setProperty('--color-title', "#ff5555");
-                        root.style.setProperty('--color-emph', "#f1fa8c");
+                        root.style.setProperty('--color-jake-emph', "#f1fa8c");
+                        root.style.setProperty('--color-jake', '#6272a4');
                         root.style.setProperty('--color-title-link-hover', "#bd93f9");
                         root.style.setProperty('--color-desc', "#f8f8f2");
                         root.style.setProperty('--color-date', "#8be9fd");
@@ -487,30 +520,122 @@
                         root.style.setProperty('--color-photo-filter', '#464e6b33');
                         specialJake = 12;
                     break;
+                    //Gruvbox-material
+                    case 14:
+                        root.style.setProperty('--color-left', "#292828");
+                        root.style.setProperty('--color-header', "#292828");
+                        root.style.setProperty('--color-content', "#292828");
+                        root.style.setProperty('--color-title', "#ea6962");
+                        root.style.setProperty('--color-jake-emph', "#ea6962");
+                        root.style.setProperty('--color-jake', '#d4be98');
+                        root.style.setProperty('--color-title-link-hover', "#b85651a0");
+                        root.style.setProperty('--color-desc', "#d4be98");
+                        root.style.setProperty('--color-date', "#d8a657");
+                        root.style.setProperty('--color-header-link', "#d4be98");
+                        root.style.setProperty('--color-header-link-hover', "#928374");
+                        root.style.setProperty('--color-left-link', "#d4be98");
+                        root.style.setProperty('--color-left-link-hover', "#928374");
+                        root.style.setProperty('--color-photo-filter', '#6b5d4633');
+                        specialJake = 14;
+                    break;
+                    //Oceanic
+                    case 18:
+                        root.style.setProperty('--color-left', "#ffffff");
+                        root.style.setProperty('--color-header', "#ffffff");
+                        root.style.setProperty('--color-content', "#ffffff");
+                        root.style.setProperty('--color-title', "#e6e6e6");
+                        root.style.setProperty('--color-jake-emph', "#e6e6e6");
+                        root.style.setProperty('--color-jake', '#e6e6e6');
+                        root.style.setProperty('--color-title-link-hover', "#e6e6e6");
+                        root.style.setProperty('--color-desc', "#e6e6e6");
+                        root.style.setProperty('--color-date', "#e6e6e6");
+                        root.style.setProperty('--color-header-link', "#e6e6e6");
+                        root.style.setProperty('--color-header-link-hover', "#e6e6e6");
+                        root.style.setProperty('--color-left-link', "#e6e6e6");
+                        root.style.setProperty('--color-left-link-hover', "#e6e6e6");
+                        root.style.setProperty('--color-photo-filter', '#ffffff40');
+                        specialJake = 18;
+                    break;
+                    //Bits
+                    case 20:
+                        root.style.setProperty('--color-left', "#0f360e");
+                        root.style.setProperty('--color-header', "#0f360e");
+                        root.style.setProperty('--color-content', "#0f360e");
+                        root.style.setProperty('--color-title', "#96b70f");
+                        root.style.setProperty('--color-jake-emph', "#96b70f");
+                        root.style.setProperty('--color-jake', '#2f5f2f');
+                        root.style.setProperty('--color-title-link-hover', "#87a70f");
+                        root.style.setProperty('--color-desc', "#a5a5a5");
+                        root.style.setProperty('--color-date', "#2f5f2f");
+                        root.style.setProperty('--color-header-link', "#96b70f");
+                        root.style.setProperty('--color-header-link-hover', "#a5a5a5");
+                        root.style.setProperty('--color-left-link', "#96b70f");
+                        root.style.setProperty('--color-left-link-hover', "#a5a5a5");
+                        root.style.setProperty('--color-photo-filter', '#0f360e40');
+                        specialJake = 20;
+                    break;
+                    //Grape LipStick
+                    case 27:
+                        root.style.setProperty('--color-left', "#290817");
+                        root.style.setProperty('--color-header', "#290817");
+                        root.style.setProperty('--color-content', "#290817");
+                        root.style.setProperty('--color-title', "#413e94");
+                        root.style.setProperty('--color-jake-emph', "#413e94");
+                        root.style.setProperty('--color-jake', '#94c598');
+                        root.style.setProperty('--color-title-link-hover', "#ffffff");
+                        root.style.setProperty('--color-desc', "#ffffff");
+                        root.style.setProperty('--color-date', "#94c598");
+                        root.style.setProperty('--color-header-link', "#ffffff");
+                        root.style.setProperty('--color-header-link-hover', "#f0b1d0");
+                        root.style.setProperty('--color-left-link', "#ffffff");
+                        root.style.setProperty('--color-left-link-hover', "#f0b1d0");
+                        root.style.setProperty('--color-photo-filter', '#bb18af24');
+                        specialJake = 27;
+                    break;
+                    //kimbie dark
+                    case 28:
+                        root.style.setProperty('--color-left', "#221a0e");
+                        root.style.setProperty('--color-header', "#221a0e");
+                        root.style.setProperty('--color-content', "#221a0e");
+                        root.style.setProperty('--color-title', "#bf2d47");
+                        root.style.setProperty('--color-jake-emph', "#bf2d47");
+                        root.style.setProperty('--color-jake', '#8f5e30');
+                        root.style.setProperty('--color-title-link-hover', "#855b60");
+                        root.style.setProperty('--color-desc', "#af8c66");
+                        root.style.setProperty('--color-date', "#829440");
+                        root.style.setProperty('--color-header-link', "#af8c66");
+                        root.style.setProperty('--color-header-link-hover', "#855b60");
+                        root.style.setProperty('--color-left-link', "#af8c66");
+                        root.style.setProperty('--color-left-link-hover', "#855b60");
+                        root.style.setProperty('--color-photo-filter', '#7557351c');
+                        specialJake = 28;
+                    break;
+                    //monokai
                     case 29:
-                        //monokai
                         root.style.setProperty('--color-left', "#171812");
                         root.style.setProperty('--color-header', "#171812");
                         root.style.setProperty('--color-content', "#171812");
                         root.style.setProperty('--color-title', "#A6E22E");
-                        root.style.setProperty('--color-emph', "#F92672");
+                        root.style.setProperty('--color-jake-emph', "#F92672");
+                        root.style.setProperty('--color-jake', '#F8F8F2');
                         root.style.setProperty('--color-title-link-hover', "#6e961c");
                         root.style.setProperty('--color-desc', "#F8F8F2");
                         root.style.setProperty('--color-date', "#F92672");
                         root.style.setProperty('--color-header-link', "#F8F8F2");
                         root.style.setProperty('--color-header-link-hover', "#6e961c");
                         root.style.setProperty('--color-left-link', "#F8F8F2");
-                        root.style.setProperty('--color-left-link-hover', "#F8F8F2");
+                        root.style.setProperty('--color-left-link-hover', "#6e961c");
                         root.style.setProperty('--color-photo-filter', '#4c2a3833');
                         specialJake = 29;
                     break;
+                    //cookies and creme
                     case 30:
-                        //cookies and creme
                         root.style.setProperty('--color-left', "#cec090");
                         root.style.setProperty('--color-header', "#c3b688");
                         root.style.setProperty('--color-content', "#c3b688");
                         root.style.setProperty('--color-title', "#351607");
-                        root.style.setProperty('--color-emph', "#351607");
+                        root.style.setProperty('--color-jake-emph', "#351607");
+                        root.style.setProperty('--color-jake', '#F8F8F2');
                         root.style.setProperty('--color-title-link-hover', "#F8F8F2");
                         root.style.setProperty('--color-desc', "#F8F8F2");
                         root.style.setProperty('--color-date', "#351607");
@@ -521,13 +646,14 @@
                         root.style.setProperty('--color-photo-filter', '#3516073d');
                         specialJake = 30;
                     break;
+                    //hotdog stand
                     case 34:
-                        //hotdog stand
                         root.style.setProperty('--color-left', "#f00");
                         root.style.setProperty('--color-header', "#f00");
                         root.style.setProperty('--color-content', "#f00");
                         root.style.setProperty('--color-title', "#ffed00");
-                        root.style.setProperty('--color-emph', "#351607");
+                        root.style.setProperty('--color-jake-emph', "#351607");
+                        root.style.setProperty('--color-jake', '#F8F8F2');
                         root.style.setProperty('--color-title-link-hover', "#351607");
                         root.style.setProperty('--color-desc', "#F8F8F2");
                         root.style.setProperty('--color-date', "#351607");
@@ -538,13 +664,104 @@
                         root.style.setProperty('--color-photo-filter', '#ff000045');
                         specialJake = 34;
                     break;
+                    //white
+                    case 35:
+                        root.style.setProperty('--color-left', "#ffffff");
+                        root.style.setProperty('--color-header', "#ffffff");
+                        root.style.setProperty('--color-content', "#ffffff");
+                        root.style.setProperty('--color-title', "#000000");
+                        root.style.setProperty('--color-jake-emph', "#000000");
+                        root.style.setProperty('--color-jake', '#bdbdbd');
+                        root.style.setProperty('--color-title-link-hover', "#000000");
+                        root.style.setProperty('--color-desc', "#000000");
+                        root.style.setProperty('--color-date', "#bdbdbd");
+                        root.style.setProperty('--color-header-link', "#000000");
+                        root.style.setProperty('--color-header-link-hover', "#000000");
+                        root.style.setProperty('--color-left-link', "#000000");
+                        root.style.setProperty('--color-left-link-hover', "#000000");
+                        root.style.setProperty('--color-photo-filter', '#0000002b');
+                        specialJake = 35;
+                    break;
+                    //black
+                    case 36:
+                        root.style.setProperty('--color-left', "#000000");
+                        root.style.setProperty('--color-header', "#000000");
+                        root.style.setProperty('--color-content', "#000000");
+                        root.style.setProperty('--color-title', "#ffffff");
+                        root.style.setProperty('--color-jake-emph', "#ffffff");
+                        root.style.setProperty('--color-jake', '#232323');
+                        root.style.setProperty('--color-title-link-hover', "#ffffff");
+                        root.style.setProperty('--color-desc', "#ffffff");
+                        root.style.setProperty('--color-date', "#232323");
+                        root.style.setProperty('--color-header-link', "#ffffff");
+                        root.style.setProperty('--color-header-link-hover', "#ffffff");
+                        root.style.setProperty('--color-left-link', "#ffffff");
+                        root.style.setProperty('--color-left-link-hover', "#ffffff");
+                        root.style.setProperty('--color-photo-filter', '#0000006b');
+                        specialJake = 36;
+                    break;
+                    //off-white
+                    case 37:
+                        root.style.setProperty('--color-left', "#d6d5c6");
+                        root.style.setProperty('--color-header', "#d6d5c6");
+                        root.style.setProperty('--color-content', "#d6d5c6");
+                        root.style.setProperty('--color-title', "#232323");
+                        root.style.setProperty('--color-jake-emph', "#ffffff");
+                        root.style.setProperty('--color-jake', '#232323');
+                        root.style.setProperty('--color-title-link-hover', "#ffffff");
+                        root.style.setProperty('--color-desc', "#232323");
+                        root.style.setProperty('--color-date', "#ffffff");
+                        root.style.setProperty('--color-header-link', "#232323");
+                        root.style.setProperty('--color-header-link-hover', "#ffffff");
+                        root.style.setProperty('--color-left-link', "#232323");
+                        root.style.setProperty('--color-left-link-hover', "#ffffff");
+                        root.style.setProperty('--color-photo-filter', '#0000006b');
+                        specialJake = 37;
+                    break;
+                    //hulu
+                    case 38:
+                        root.style.setProperty('--color-left', "#151414");
+                        root.style.setProperty('--color-header', "#151414");
+                        root.style.setProperty('--color-content', "#151414");
+                        root.style.setProperty('--color-title', "#4fe783");
+                        root.style.setProperty('--color-jake-emph', "#4fe783");
+                        root.style.setProperty('--color-jake', '#232323');
+                        root.style.setProperty('--color-title-link-hover', "#ffffff");
+                        root.style.setProperty('--color-desc', "#ffffff");
+                        root.style.setProperty('--color-date', "#232323");
+                        root.style.setProperty('--color-header-link', "#4fe783");
+                        root.style.setProperty('--color-header-link-hover', "#ffffff");
+                        root.style.setProperty('--color-left-link', "#4fe783");
+                        root.style.setProperty('--color-left-link-hover', "#ffffff");
+                        root.style.setProperty('--color-photo-filter', '#0000006b');
+                        specialJake = 38;
+                    break;
+                    //GitHub
+                    case 39:
+                        root.style.setProperty('--color-left', "#ffffff");
+                        root.style.setProperty('--color-header', "#24292e");
+                        root.style.setProperty('--color-content', "#f6f8fa");
+                        root.style.setProperty('--color-title', "#24292e");
+                        root.style.setProperty('--color-jake-emph', "#3166d5");
+                        root.style.setProperty('--color-jake', '#232323');
+                        root.style.setProperty('--color-title-link-hover', "#69727c");
+                        root.style.setProperty('--color-desc', "#24292e");
+                        root.style.setProperty('--color-date', "#69727c");
+                        root.style.setProperty('--color-header-link', "#f6f8fa");
+                        root.style.setProperty('--color-header-link-hover', "#69727c");
+                        root.style.setProperty('--color-left-link', "#24292e");
+                        root.style.setProperty('--color-left-link-hover', "#69727c");
+                        root.style.setProperty('--color-photo-filter', '#0000006b');
+                        specialJake = 39;
+                    break;
                     default:
                         //Gruvbox-material
                         root.style.setProperty('--color-left', "#292828");
                         root.style.setProperty('--color-header', "#292828");
                         root.style.setProperty('--color-content', "#292828");
                         root.style.setProperty('--color-title', "#ea6962");
-                        root.style.setProperty('--color-emph', "#ea6962");
+                        root.style.setProperty('--color-jake-emph', "#ea6962");
+                        root.style.setProperty('--color-jake', '#d4be98');
                         root.style.setProperty('--color-title-link-hover', "#b85651a0");
                         root.style.setProperty('--color-desc', "#d4be98");
                         root.style.setProperty('--color-date', "#d8a657");
