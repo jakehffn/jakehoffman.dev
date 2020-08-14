@@ -444,14 +444,13 @@
 
             function setTheme(num) {
 
-                num = parseInt(num);
-
                 localStorage.setItem('theme', num);
-                console.log(localStorage.getItem('theme'));
                 var jakeContainer = document.getElementById("left-top");
                 var specialJake;
 
                 let root = document.documentElement;
+
+                num = parseInt(num);
 
                 switch (num) {
                     case 14:
@@ -505,6 +504,23 @@
                         root.style.setProperty('--color-left-link-hover', "#F8F8F2");
                         root.style.setProperty('--color-photo-filter', '#4c2a3833');
                         specialJake = 29;
+                    break;
+                    case 34:
+                        //hotdog stand
+                        root.style.setProperty('--color-left', "#f00");
+                        root.style.setProperty('--color-header', "#f00");
+                        root.style.setProperty('--color-content', "#f00");
+                        root.style.setProperty('--color-title', "#ffed00");
+                        root.style.setProperty('--color-emph', "#351607");
+                        root.style.setProperty('--color-title-link-hover', "#351607");
+                        root.style.setProperty('--color-desc', "#F8F8F2");
+                        root.style.setProperty('--color-date', "#351607");
+                        root.style.setProperty('--color-header-link', "#F8F8F2");
+                        root.style.setProperty('--color-header-link-hover', "#351607");
+                        root.style.setProperty('--color-left-link', "#F8F8F2");
+                        root.style.setProperty('--color-left-link-hover', "#351607");
+                        root.style.setProperty('--color-photo-filter', '#ff000045');
+                        specialJake = 34;
                     break;
                     default:
                         //Gruvbox-material
