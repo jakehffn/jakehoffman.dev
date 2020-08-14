@@ -36,6 +36,7 @@
             }
 
             html, body{
+                margin: 0px;
                 height: 100%;
                 width: 100%;
                 -ms-overflow-style: none;  /* IE and Edge */
@@ -47,24 +48,23 @@
             }
 
             body {
-                background-color: var(--color-content);
-                font-family:JetBrainsMono, 'Courier New', Courier, monospace;
-                color: var(--color-desc);
-                display: inline-block;
-                
-            }
+                    background-color: var(--color-content);
+                    font-family:JetBrainsMono, 'Courier New', Courier, monospace;
+                    color: var(--color-desc);
+                    display: inline-block;
+                }
 
             ul {
                 margin: 0;
             }
-
+           
             header {
                 margin: 0;
                 background-color: var(--color-header);
                 position: fixed;
                 left: 0;
                 top: 0;
-                z-index: 0;
+                z-index: 1;
 
                 width: 100%;
                 height: 84px;
@@ -81,8 +81,7 @@
             }
 
             .left-link:hover {
-                color: var(--color-left-link-hover);
-                
+                color: var(--color-left-link-hover);       
             }
 
             .header-link {
@@ -93,7 +92,6 @@
 
             .header-link:hover {
                 color: var(--color-header-link-hover);
-                
             }
 
             #header-right {
@@ -114,15 +112,11 @@
             }
 
             .left {
-                position: fixed;
+                position: relative;
 
-                text-align: center;
-
-                top: 0;
-                left: 0;
-                height: 100vh;
-                width: 300px;
-                z-index: 1;
+                height: 450px;
+                width: 100%;
+                z-index: 0;
                 background-color: var(--color-left);
             }
 
@@ -131,7 +125,7 @@
                 position: absolute;
                 /* text-align: left; */
                 width: 1000px;
-                bottom: 770px;
+                bottom: 525px;
                 left: -430px;
                 transform: rotate(90deg);
             }
@@ -145,6 +139,7 @@
                 color: var(--color-header-link-hover)
             }
 
+            
             #emph-jake {
                 color: var(--color-jake-emph);
                 cursor: pointer;
@@ -156,9 +151,9 @@
 
             #left-bottom {
                 position: absolute;
-                width: 99%;
-                bottom: 32px;
-                margin: auto;
+                width: auto;
+                top: 100px;
+                left: 200px;
             }
 
             .left-bottom {
@@ -168,8 +163,7 @@
             #circle {
                 width: 180px;
                 height: 180px;
-                margin-left: auto;
-                margin-right: auto;
+                left: 200px;
                 margin-bottom: 12px;
                 background-color: var(--color-left);
                 border-radius: 50%;
@@ -198,11 +192,11 @@
                 -moz-box-shadow: 0px -18px 5px 17px #00000080;
                 box-shadow: 0px -18px 5px 17px #00000080;
             }
-            
+
             #content {
-                margin-top: 84px;
-                margin-left: 280px;
-                padding: 100px 20vw 0px 10vw;
+                margin-top: 10px;
+                margin-left: 0px;
+                padding: 30px 10vw 0px 10vw;
                 overflow: auto;
 
                 z-index: 10;
@@ -220,7 +214,7 @@
 
             .entry-date {
                 color: var(--color-date);
-                margin-bottom: 60px;
+                margin-bottom: 30px;
                 margin-left: 40px;
             }
 
@@ -239,6 +233,98 @@
             .entry-desc {
                 margin-top: 0px;
                 margin-bottom: 60px;
+            }
+
+            @media only screen and (min-width: 800px) {
+
+                header {
+                    position: fixed;
+                    left: 0;
+                    top: 0;
+                    z-index: 0;
+
+                    width: 100%;
+                    height: 84px;
+                }
+
+                .left {
+                    position: fixed;
+
+                    text-align: center;
+
+                    top: 0;
+                    left: 0;
+                    height: 100vh;
+                    width: 300px;
+                    z-index: 1;
+                }
+
+                #left-top {
+                    bottom: 770px;
+                }
+
+                #left-bottom {
+                    position: absolute;
+                    width: 99%;
+                    bottom: 32px;
+                    left:auto;
+                    top: auto;
+                    margin: auto;
+                }
+
+                #circle {
+                    width: 180px;
+                    height: 180px;
+                    margin-left: auto;
+                    margin-right: auto;
+                    margin-bottom: 12px;
+                    background-color: var(--color-left);
+                    border-radius: 50%;
+
+                    background-image: url("images/ME.jpg");
+                    background-repeat: no-repeat;
+                    background-size: auto;
+                    background-position: center;
+                    background-size: 180px;
+
+                }
+                
+                #content {
+                    margin-top: 84px;
+                    margin-left: 280px;
+                    padding: 100px 20vw 0px 10vw;
+                    overflow: auto;
+
+                    z-index: 10;
+                }
+
+                .entry-content {
+                    margin-top: 0px;
+                    margin-left: 40px;
+                }
+
+                .entry-date {
+                    color: var(--color-date);
+                    margin-bottom: 60px;
+                    margin-left: 40px;
+                }
+
+                .entry-link {
+                    text-decoration: none;
+                    font-weight: bold;
+                    color: var(--color-title);
+                    cursor: pointer;
+                }
+
+                .entry-link:hover {
+                    color: var(--color-title-link-hover);
+                    
+                }
+
+                .entry-desc {
+                    margin-top: 0px;
+                    margin-bottom: 60px;
+                }
             }
 
         </style>
@@ -436,7 +522,7 @@
             document.getElementById("projects").addEventListener("click", projects);
 
             const thoughts = (fn) => {
-                document.getElementById("content").innerHTML = '';
+                // document.getElementById("content").innerHTML = '';
                 firebase.database().ref("thoughts").on("child_added", function(snap){
 
                 let title = snap.val().title;
@@ -574,6 +660,24 @@
                         root.style.setProperty('--color-photo-filter', '#0f360e40');
                         specialJake = 20;
                     break;
+                    //Blue screen of death
+                    case 26:
+                        root.style.setProperty('--color-left', "#0000FF");
+                        root.style.setProperty('--color-header', "#0000FF");
+                        root.style.setProperty('--color-content', "#0000FF");
+                        root.style.setProperty('--color-title', "#FFFFFF");
+                        root.style.setProperty('--color-jake-emph', "#00005a");
+                        root.style.setProperty('--color-jake', '#FFFFFF');
+                        root.style.setProperty('--color-title-link-hover', "#00005a");
+                        root.style.setProperty('--color-desc', "#ffffff");
+                        root.style.setProperty('--color-date', "#FFFFFF");
+                        root.style.setProperty('--color-header-link', "#ffffff");
+                        root.style.setProperty('--color-header-link-hover', "#00005a");
+                        root.style.setProperty('--color-left-link', "#ffffff");
+                        root.style.setProperty('--color-left-link-hover', "#00005a");
+                        root.style.setProperty('--color-photo-filter', '#FFFFFF24');
+                        specialJake = 26;
+                    break;
                     //Grape LipStick
                     case 27:
                         root.style.setProperty('--color-left', "#290817");
@@ -582,12 +686,12 @@
                         root.style.setProperty('--color-title', "#413e94");
                         root.style.setProperty('--color-jake-emph', "#413e94");
                         root.style.setProperty('--color-jake', '#94c598');
-                        root.style.setProperty('--color-title-link-hover', "#ffffff");
-                        root.style.setProperty('--color-desc', "#ffffff");
+                        root.style.setProperty('--color-title-link-hover', "#bd90a4");
+                        root.style.setProperty('--color-desc', "#bd90a4");
                         root.style.setProperty('--color-date', "#94c598");
-                        root.style.setProperty('--color-header-link', "#ffffff");
+                        root.style.setProperty('--color-header-link', "#bd90a4");
                         root.style.setProperty('--color-header-link-hover', "#f0b1d0");
-                        root.style.setProperty('--color-left-link', "#ffffff");
+                        root.style.setProperty('--color-left-link', "#bd90a4");
                         root.style.setProperty('--color-left-link-hover', "#f0b1d0");
                         root.style.setProperty('--color-photo-filter', '#bb18af24');
                         specialJake = 27;
