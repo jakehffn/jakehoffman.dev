@@ -128,6 +128,7 @@
                 bottom: 525px;
                 left: -430px;
                 transform: rotate(90deg);
+                display: inline-block;
             }
 
             .jake {
@@ -282,6 +283,7 @@
 
                 #left-top {
                     bottom: 770px;
+                    display: inline-block;
                 }
 
                 #left-bottom {
@@ -609,6 +611,24 @@
                         root.style.setProperty('--color-photo-filter', '#bb18af24');
                         specialJake = 4;
                     break;
+                    //Merko
+                    case 7:
+                        root.style.setProperty('--color-left', "#0b0f0b");
+                        root.style.setProperty('--color-header', "#0b0f0b");
+                        root.style.setProperty('--color-content', "#0b0f0b");
+                        root.style.setProperty('--color-title', "#abd200");
+                        root.style.setProperty('--color-jake-emph', "#abd200");
+                        root.style.setProperty('--color-jake', '#222623');
+                        root.style.setProperty('--color-title-link-hover', "#3b4808");
+                        root.style.setProperty('--color-desc', "#94b2a7");
+                        root.style.setProperty('--color-date', "#5d5a61");
+                        root.style.setProperty('--color-header-link', "#6abb8a");
+                        root.style.setProperty('--color-header-link-hover', "#94b2a7");
+                        root.style.setProperty('--color-left-link', "#6abb8a");
+                        root.style.setProperty('--color-left-link-hover', "#94b2a7");
+                        root.style.setProperty('--color-photo-filter', '#142f0f33');
+                        specialJake = 7;
+                    break;
                     //dracula
                     case 12:
                         root.style.setProperty('--color-left', "#282a36");
@@ -645,6 +665,24 @@
                         root.style.setProperty('--color-photo-filter', '#6b5d4633');
                         specialJake = 14;
                     break;
+                    //SomeWave
+                    case 15:
+                        root.style.setProperty('--color-left', "#131222");
+                        root.style.setProperty('--color-header', "#131222");
+                        root.style.setProperty('--color-content', "#131222");
+                        root.style.setProperty('--color-title', "#9b1769");
+                        root.style.setProperty('--color-jake-emph', "#9b1769");
+                        root.style.setProperty('--color-jake', '#241530');
+                        root.style.setProperty('--color-title-link-hover', "#aa5578");
+                        root.style.setProperty('--color-desc', "#5fa19e");
+                        root.style.setProperty('--color-date', "#91a526");
+                        root.style.setProperty('--color-header-link', "#9b1769");
+                        root.style.setProperty('--color-header-link-hover', "#5fa19e");
+                        root.style.setProperty('--color-left-link', "#9b1769");
+                        root.style.setProperty('--color-left-link-hover', "#5fa19e");
+                        root.style.setProperty('--color-photo-filter', '#28233561');
+                        specialJake = 15;
+                    break;
                     //Oceanic
                     case 18:
                         root.style.setProperty('--color-left', "#ffffff");
@@ -680,6 +718,24 @@
                         root.style.setProperty('--color-left-link-hover', "#a5a5a5");
                         root.style.setProperty('--color-photo-filter', '#0f360e40');
                         specialJake = 20;
+                    break;
+                    //Atlantic Night
+                    case 23:
+                        root.style.setProperty('--color-left', "#020323");
+                        root.style.setProperty('--color-header', "#020323");
+                        root.style.setProperty('--color-content', "#020323");
+                        root.style.setProperty('--color-title', "#77bc81");
+                        root.style.setProperty('--color-jake-emph', "#a56360");
+                        root.style.setProperty('--color-jake', '#3e4b64');
+                        root.style.setProperty('--color-title-link-hover', "#287675");
+                        root.style.setProperty('--color-desc', "#959baa");
+                        root.style.setProperty('--color-date', "#806599");
+                        root.style.setProperty('--color-header-link', "#b8a663");
+                        root.style.setProperty('--color-header-link-hover', "#405b80");
+                        root.style.setProperty('--color-left-link', "#379b91");
+                        root.style.setProperty('--color-left-link-hover', "#405b80");
+                        root.style.setProperty('--color-photo-filter', '#02032359');
+                        specialJake = 23;
                     break;
                     //Blue screen of death
                     case 26:
@@ -770,6 +826,24 @@
                         root.style.setProperty('--color-left-link-hover', "#351607");
                         root.style.setProperty('--color-photo-filter', '#3516073d');
                         specialJake = 30;
+                    break;
+                    //cookies and creme
+                    case 31:
+                        root.style.setProperty('--color-left', "#f22580");
+                        root.style.setProperty('--color-header', "#ffffff");
+                        root.style.setProperty('--color-content', "#ffffff");
+                        root.style.setProperty('--color-title', "#f22580");
+                        root.style.setProperty('--color-jake-emph', "#351607");
+                        root.style.setProperty('--color-jake', '#ffffff');
+                        root.style.setProperty('--color-title-link-hover', "#351607");
+                        root.style.setProperty('--color-desc', "#351607");
+                        root.style.setProperty('--color-date', "#b294ff");
+                        root.style.setProperty('--color-header-link', "#f22580");
+                        root.style.setProperty('--color-header-link-hover', "#351607");
+                        root.style.setProperty('--color-left-link', "#ffffff");
+                        root.style.setProperty('--color-left-link-hover', "#351607");
+                        root.style.setProperty('--color-photo-filter', '#ffffff26');
+                        specialJake = 31;
                     break;
                     //hotdog stand
                     case 34:
@@ -902,10 +976,13 @@
                 jakeContainer.innerHTML = '';
 
                 for (i = 0; i < 40; i++) {
+                    if (i % 8 == 0) {
+                        jakeContainer.innerHTML += '</br>';
+                    }
                     if (i == specialJake) {
-                        jakeContainer.innerHTML += '<span id="emph-jake" class="jake"> Jake Hoffman</span>';
+                        jakeContainer.innerHTML += '<span id="emph-jake" class="jake">&nbsp;Jake&nbsp;Hoffman</span>';
                     } else {
-                        jakeContainer.innerHTML += '<span onclick="setTheme(' + i + ')" class="jake"> Jake Hoffman</span>';
+                        jakeContainer.innerHTML += '<span onclick="setTheme(' + i + ')" class="jake">&nbsp;Jake&nbsp;Hoffman</span>';
                     }
                     
                 }
