@@ -328,7 +328,7 @@
 
                 .entry-date {
                     color: var(--color-date);
-                    margin-bottom: 60px;
+                    margin-bottom: 30px;
                     margin-left: 40px;
                 }
 
@@ -484,7 +484,7 @@
                     url: url
                 })
             }
-            const addThought = (title, content) => {
+            const addThought = (title, content, post) => {
                 
                 var date = getFormattedDate();
 
@@ -495,23 +495,29 @@
                     content: content,
                     date: date
                 })
+
+                firebase.database().ref('posts/' + key).set({
+                    post: post,
+                    title: title,
+                    date: date
+                })
             }
 
             const links = (fn) => {
                 document.getElementById("content").innerHTML = '';
                 firebase.database().ref("links").on("child_added", function(snap){
 
-                let title = snap.val().title;
-                let date = snap.val().date;
-                let url = snap.val().url;
+                    let title = snap.val().title;
+                    let date = snap.val().date;
+                    let url = snap.val().url;
 
-                var html = [
-                    '<div class="entry">',
-                        '<a class="entry-link" href="' + url + '" target="_blank">' + title + ' --</a>',
-                        '<div class="entry-date">' + date + '</div>'
-                ].join("\n");
+                    var html = [
+                        '<div class="entry">',
+                            '<a class="entry-link" href="' + url + '" target="_blank">' + title + ' --</a>',
+                            '<div class="entry-date">' + date + '</div>'
+                    ].join("\n");
 
-                document.getElementById("content").innerHTML = html + document.getElementById("content").innerHTML;
+                    document.getElementById("content").innerHTML = html + document.getElementById("content").innerHTML;
                 });
             }
             document.getElementById("links").addEventListener("click", links);
@@ -520,17 +526,17 @@
                 document.getElementById("content").innerHTML = '';
                 firebase.database().ref("projects").on("child_added", function(snap){
 
-                let title = snap.val().title;
-                let desc = snap.val().desc;
-                let url = snap.val().url;
+                    let title = snap.val().title;
+                    let desc = snap.val().desc;
+                    let url = snap.val().url;
 
-                var html = [
-                    '<div class="entry">',
-                        '<a class="entry-link" href="' + url + '" target="_blank">' + title + ' --</a>',
-                        '<p class="entry-content"></br><span class="tab"></span>' + desc + '</p></div>'
-                ].join("\n");
+                    var html = [
+                        '<div class="entry">',
+                            '<a class="entry-link" href="' + url + '" target="_blank">' + title + ' --</a>',
+                            '<p class="entry-content"></br><span class="tab"></span>' + desc + '</p></div>'
+                    ].join("\n");
 
-                document.getElementById("content").innerHTML = html + document.getElementById("content").innerHTML;
+                    document.getElementById("content").innerHTML = html + document.getElementById("content").innerHTML;
                 });
             }
             document.getElementById("projects").addEventListener("click", projects);
@@ -539,21 +545,43 @@
                 document.getElementById("content").innerHTML = '';
                 firebase.database().ref("thoughts").on("child_added", function(snap){
 
-                let title = snap.val().title;
-                let content = snap.val().content;
-                let date = snap.val().date;
+                    let title = snap.val().title;
+                    let content = snap.val().content;
+                    let date = snap.val().date;
 
-                var html = [
-                    '<div class="entry">',
-                        '<div class="entry-title">' + title + ' --</div>',
-                        '<p class="entry-content"></br><span class="tab"></span>' + content + '</p></div>',
-                        '<div class="entry-date">' + date + '</div>'
-                ].join("\n");
+                    let key = snap.key;
 
-                document.getElementById("content").innerHTML = html + document.getElementById("content").innerHTML;
+                    var html = [
+                        '<div class="entry">',
+                            '<span class="entry-link" onclick="setPost(' + "'" + key + "'" + ')">' + title + ' --</span>',
+                            '<p class="entry-content"></br><span class="tab"></span>' + content + '</p></div>',
+                            '<div class="entry-date">' + date + '</div>'
+                    ].join("\n");
+
+                    document.getElementById("content").innerHTML = html + document.getElementById("content").innerHTML;
                 });
             }
             document.getElementById("thoughts").addEventListener("click", thoughts);
+
+            function setPost(key) {
+                document.getElementById("content").innerHTML = '';
+
+                firebase.database().ref("posts/" + key).on("value", function(snap){
+                    let post = snap.val().post;
+                    let title = snap.val().title;
+                    let date = snap.val().date;
+
+                    var html = [
+                        '<div class="entry">',
+                            '<span class="entry-link" onclick="thoughts()">' + title + ' --</span>',
+                            '<div class="entry-date">' + date + '</div>',
+                            '<p class="entry-content"><span class="tab"></span>' + post + '</p></div>'
+                            
+                    ].join("\n");
+
+                    document.getElementById("content").innerHTML = html + document.getElementById("content").innerHTML;
+                });
+            }
 
             function setTheme(num) {
 
