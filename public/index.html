@@ -236,6 +236,10 @@
                 margin-bottom: 60px;
             }
 
+            .after-page-space {
+                height: 120px;
+            }
+
             @media only screen and (min-width: 800px) {
                 header {
                     position: fixed;
@@ -587,7 +591,8 @@
                         '<div class="entry">',
                             '<span class="entry-link" onclick="thoughts()">' + title + ' --</span>',
                             '<div class="entry-date">' + date + '</div>',
-                            '<p class="entry-content"><span class="tab"></span>' + post + '</p></div>'
+                            '<p class="entry-content"><span class="tab"></span>' + post + '</p></div>',
+                            '<div class="after-page-space"></div>'
                             
                     ].join("\n");
 
@@ -1012,7 +1017,7 @@
                         root.style.setProperty('--color-jake', '#232323');
                         root.style.setProperty('--color-title-link-hover', "#ffffff");
                         root.style.setProperty('--color-desc', "#ffffff");
-                        root.style.setProperty('--color-date', "#232323");
+                        root.style.setProperty('--color-date', "#464646");
                         root.style.setProperty('--color-header-link', "#4fe783");
                         root.style.setProperty('--color-header-link-hover', "#ffffff");
                         root.style.setProperty('--color-left-link', "#4fe783");
