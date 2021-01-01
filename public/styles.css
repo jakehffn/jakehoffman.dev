@@ -201,6 +201,12 @@ html:not([data-scroll='0']) header {
 .entry-content {
     margin-top: 0px;
     margin-left: 20px;
+    text-decoration: none;
+}
+
+.entry-content a{
+    text-decoration: none;
+    color: var(--color-title);
 }
 
 .entry-date {
