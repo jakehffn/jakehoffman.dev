@@ -73,3 +73,6 @@ node_modules/
 
 #posts backup/creation
 /posts
+
+database.rules.json
+package-lock.json
