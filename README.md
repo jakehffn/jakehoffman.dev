@@ -1,3 +1,3 @@
-# Jakethoffman.com
+# JakeHoffman.dev
 
-This is my personal blog and portfolio website.
+My personal website and portfolio. Now using Astro!
