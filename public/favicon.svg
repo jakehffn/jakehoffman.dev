@@ -1,13 +1,66 @@
-<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 36 36">
-  <path fill="#000" d="M22.25 4h-8.5a1 1 0 0 0-.96.73l-5.54 19.4a.5.5 0 0 0 .62.62l5.05-1.44a2 2 0 0 0 1.38-1.4l3.22-11.66a.5.5 0 0 1 .96 0l3.22 11.67a2 2 0 0 0 1.38 1.39l5.05 1.44a.5.5 0 0 0 .62-.62l-5.54-19.4a1 1 0 0 0-.96-.73Z"/>
-  <path fill="url(#gradient)" d="M18 28a7.63 7.63 0 0 1-5-2c-1.4 2.1-.35 4.35.6 5.55.14.17.41.07.47-.15.44-1.8 2.93-1.22 2.93.6 0 2.28.87 3.4 1.72 3.81.34.16.59-.2.49-.56-.31-1.05-.29-2.46 1.29-3.25 3-1.5 3.17-4.83 2.5-6-.67.67-2.6 2-5 2Z"/>
-  <defs>
-    <linearGradient id="gradient" x1="16" x2="16" y1="32" y2="24" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#000"/>
-      <stop offset="1" stop-color="#000" stop-opacity="0"/>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   fill="none"
+   viewBox="0 0 36 36"
+   version="1.1"
+   id="svg854"
+   sodipodi:docname="favicon.svg"
+   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview856"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:pageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     showgrid="false"
+     inkscape:zoom="11.125"
+     inkscape:cx="26.516854"
+     inkscape:cy="10.337079"
+     inkscape:window-width="1541"
+     inkscape:window-height="1032"
+     inkscape:window-x="145"
+     inkscape:window-y="59"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg854" />
+  <defs
+     id="defs850">
+    <linearGradient
+       id="gradient"
+       x1="16"
+       x2="16"
+       y1="32"
+       y2="24"
+       gradientUnits="userSpaceOnUse">
+      <stop
+         stop-color="#000"
+         id="stop845" />
+      <stop
+         offset="1"
+         stop-color="#000"
+         stop-opacity="0"
+         id="stop847" />
     </linearGradient>
   </defs>
-	<style>
+  <style
+     id="style852">
     @media (prefers-color-scheme:dark){:root{filter:invert(100%)}}
   </style>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-weight:normal;font-size:38.5418px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.963542"
+     x="2.0856581"
+     y="31.391064"
+     id="text1919"
+     transform="scale(0.97520607,1.0254243)"><tspan
+       sodipodi:role="line"
+       id="tspan1917"
+       x="2.0856581"
+       y="31.391064"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Wingdings;-inkscape-font-specification:Wingdings;stroke-width:0.963542">J</tspan></text>
 </svg>

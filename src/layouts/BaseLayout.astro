@@ -1,0 +1,25 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const { title, description} = Astro.props;
+---
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<BaseHead title={title} description={description} />
+	</head>
+    <body class="font-sans bg-main-bg flex justify-center w-full pt-32 min-h-screen no-scrollbar">
+        <content class="text-main-text text-justify flex flex-col p-4 w-full lg:w-2/3 ">
+            <div class="flex-grow flex flex-col lg:flex-row">
+                <Header />
+                <div class="lg:w-4/6 xl:w-[75%] border-t-2 lg:border-t-0 lg:border-l-2 border-main-accent pt-4 lg:p-4 lg:py-0 mb-48">
+                    <slot />
+                </div>
+                <div class="w-1/6 xl:w-[12.5%]"></div>
+            </div>
+            <Footer />
+        </content>
+    </body>
+</html>

@@ -1,7 +1,12 @@
 ---
-const today = new Date();
+import HeaderLink from './HeaderLink.astro';
 ---
 
-<footer class="text-slate-100">
-	&copy; {today.getFullYear()} YOUR NAME HERE. All rights reserved.
+<footer>
+    <nav class="italic flex flex-row w-full justify-center text-main-subtle selection:text-main-text selection:bg-main-subtle">
+        <span>Find me</span>
+		<HeaderLink href="https://github.com/jakehffn" class="font-bold px-2 hover:text-main-subtle-hover">@GitHub</HeaderLink>
+        <span>and</span>
+        <HeaderLink href="https://www.linkedin.com/in/jake-t-hoffman/" class="font-bold px-2 hover:text-main-subtle-hover">@LinkedIn</HeaderLink>
+	</nav>
 </footer>

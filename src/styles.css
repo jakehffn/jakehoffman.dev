@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    * {
+        @apply selection:bg-main-accent-hover
+    }
+    
+    pre {
+        @apply p-4 rounded-md shadow-inner mb-4;
+    }
+
+    table {
+        @apply table-auto w-auto text-sm mb-4;
+    }
+
+    tbody {
+        @apply bg-main-code-bg;
+    }
+
+    th {
+        @apply border-b border-main-subtle p-4 pl-8 pb-3 text-left;
+    }
+
+    td {
+        @apply border-b border-main-subtle p-4 pl-8;
+    }
+
+    p {
+        @apply mb-8;
+    }
+    
+    h1 {
+        @apply text-3xl font-bold pb-4;
+    }
+    
+    h2 {
+        @apply text-2xl font-bold pb-4;
+    }
+    
+    h3 {
+        @apply text-xl font-bold italic pb-2;
+    }
+    
+    h4 {
+        @apply text-lg font-bold pb-2;
+    }
+    
+    p > a {
+        @apply underline hover:text-main-text-hover;
+    }
+    
+    cite {
+        @apply pl-4;
+    }
+    
+    cite::before{
+        content: "— " ;
+    }
+
+    mark {
+        @apply bg-main-accent-hover text-main-text;
+    }
+
+    blockquote {
+        @apply border-l-2 pl-4 ml-4 border-main-subtle;
+    }
+  }
+
+:root {
+    color-scheme: dark;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scrollbar {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
