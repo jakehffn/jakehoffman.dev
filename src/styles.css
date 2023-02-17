@@ -27,6 +27,15 @@
         @apply border-b border-main-subtle p-4 pl-8;
     }
 
+    ul {
+        @apply pl-4
+    }
+
+    ol {
+        list-style-type: decimal;
+        @apply pl-8
+    }
+
     p {
         @apply mb-8;
     }

@@ -1,28 +1,17 @@
 ---
 import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
 import { getCollection } from 'astro:content';
-import FormattedDate from '../../components/FormattedDate.astro';
-
+import TagList from '../../components/TagList.astro';
+import PostList from '../../components/PostList.astro';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 
-const posts = (await getCollection('blog')).sort(
-	(a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
+const posts = (await getCollection('blog')).filter((post) => !post.data.draft).sort(
+	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
 );
+const tags = [... new Set((posts.map((post) => ((post.data.tags || '').split(' ')))).flat())].sort()
 ---
 
 <BaseLayout title={SITE_TITLE} description={SITE_DESCRIPTION}>
-	<main>
-		<section>
-			<ul>
-				{
-					posts.map((post) => (
-						<li>
-							<span class="italic pr-8"><FormattedDate date={post.data.pubDate}/></span>
-							<a href={`/blog/${post.slug}/`} class="underline">{post.data.title}</a>
-						</li>
-					))
-				}
-			</ul>
-		</section>
-	</main>
+	<TagList tags={tags} />
+	<PostList posts={posts} />
 </BaseLayout>

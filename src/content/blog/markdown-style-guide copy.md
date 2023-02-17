@@ -1,10 +1,10 @@
 ---
-title: "CMake Guide"
+title: "Markdown Style Guide"
 description: "Here is a sample of some basic Markdown syntax that can be used when writing Markdown content in Astro."
-pubDate: "June 30 2022"
+pubDate: "Jul 01 2022"
 updatedDate: "Aug 08 2022"
-draft: false
-tags: "C++ C G++ CMake Git C#"
+draft: true
+tags: "C++ Git C# Rust Go Compilers"
 ---
 
 Here is a sample of some basic Markdown syntax that can be used when writing Markdown content in Astro.

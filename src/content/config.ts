@@ -13,7 +13,13 @@ const blog = defineCollection({
 		updatedDate: z
 			.string()
 			.optional()
-			.transform((str) => (str ? new Date(str) : undefined))
+			.transform((str) => (str ? new Date(str) : undefined)),
+		draft: z
+			.boolean()
+			.optional(),
+		tags: z
+			.string()
+			.optional()
 	}),
 });
 
