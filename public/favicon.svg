@@ -13,19 +13,19 @@
   <sodipodi:namedview
      id="namedview856"
      pagecolor="#505050"
-     bordercolor="#eeeeee"
+     bordercolor="#f4eeee"
      borderopacity="1"
      inkscape:pageshadow="0"
      inkscape:pageopacity="0"
      inkscape:pagecheckerboard="0"
      showgrid="false"
      inkscape:zoom="11.125"
-     inkscape:cx="26.516854"
-     inkscape:cy="10.337079"
+     inkscape:cx="7.6404494"
+     inkscape:cy="16.359551"
      inkscape:window-width="1541"
      inkscape:window-height="1032"
-     inkscape:window-x="145"
-     inkscape:window-y="59"
+     inkscape:window-x="397"
+     inkscape:window-y="87"
      inkscape:window-maximized="0"
      inkscape:current-layer="svg854" />
   <defs
@@ -47,20 +47,15 @@
          id="stop847" />
     </linearGradient>
   </defs>
-  <style
-     id="style852">
-    @media (prefers-color-scheme:dark){:root{filter:invert(100%)}}
-  </style>
-  <text
-     xml:space="preserve"
-     style="font-style:normal;font-weight:normal;font-size:38.5418px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.963542"
-     x="2.0856581"
-     y="31.391064"
-     id="text1919"
-     transform="scale(0.97520607,1.0254243)"><tspan
-       sodipodi:role="line"
-       id="tspan1917"
-       x="2.0856581"
-       y="31.391064"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Wingdings;-inkscape-font-specification:Wingdings;stroke-width:0.963542">J</tspan></text>
+  
+  <g
+     aria-label="!"
+     transform="matrix(0.96307335,0,0,0.83913306,1.5331619,-0.31117824)"
+     id="text13337"
+     style="font-size:49.1901px;line-height:1.25;fill:#ea3957;stroke:#ea3957;stroke-width:1.22975">
+    <path
+       d="M 19.347385,1.3073546 18.722902,25.080813 H 14.639739 L 13.967218,1.3073546 Z M 19.107199,37.071056 h -4.899795 v -5.067925 h 4.899795 z"
+       id="path17257"
+       sodipodi:nodetypes="cccccccccc" />
+  </g>
 </svg>

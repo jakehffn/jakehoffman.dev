@@ -6,13 +6,13 @@ import TagList from '../../components/TagList.astro';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import PostList from '../../components/PostList.astro';
 
-const posts = (await getCollection('blog')).filter((post) => !post.data.draft).sort(
+const posts = (await getCollection('posts')).filter((post) => !post.data.draft).sort(
 	(a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
 );
 
 export async function getStaticPaths() {
 
-	const posts = (await getCollection('blog')).filter((post) => !post.data.draft).sort(
+	const posts = (await getCollection('posts')).filter((post) => !post.data.draft).sort(
 	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf() 
 	);
 	

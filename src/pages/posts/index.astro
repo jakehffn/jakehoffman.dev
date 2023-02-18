@@ -5,7 +5,7 @@ import TagList from '../../components/TagList.astro';
 import PostList from '../../components/PostList.astro';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 
-const posts = (await getCollection('blog')).filter((post) => !post.data.draft).sort(
+const posts = (await getCollection('posts')).filter((post) => !post.data.draft).sort(
 	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
 );
 const tags = [... new Set((posts.map((post) => ((post.data.tags || '').split(' ')))).flat())].sort()

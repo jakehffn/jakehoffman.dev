@@ -1,5 +1,4 @@
 ---
-import { any } from "astro/zod";
 import FormattedDate from "./FormattedDate.astro";
 
 interface Props {
@@ -8,11 +7,11 @@ interface Props {
 
 const { posts } = Astro.props;
 ---
-<ul class="grid grid-cols-[max-content_max-content]">
+<ul class="grid grid-cols-[max-content_max-content] pl-0">
     {
         posts.map((post) => (
             <span class="italic pr-8"><FormattedDate date={post.data.pubDate}/></span>
-            <a href={`/blog/${post.slug}/`} class="underline">{post.data.title}</a>
+            <a href={`/posts/${post.slug}/`} class="underline">{post.data.title}</a>
         ))
     }
 </ul>

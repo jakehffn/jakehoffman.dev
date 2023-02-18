@@ -3,8 +3,9 @@
 @tailwind utilities;
 
 @layer base {
+
     * {
-        @apply selection:bg-main-accent-hover
+        @apply selection:bg-main-accent-hover text-sm sm:text-base
     }
     
     pre {
