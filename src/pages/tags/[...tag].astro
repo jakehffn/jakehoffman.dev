@@ -1,14 +1,9 @@
 ---
 import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
 import { getCollection } from 'astro:content';
-import FormattedDate from '../../components/FormattedDate.astro';
 import TagList from '../../components/TagList.astro';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import PostList from '../../components/PostList.astro';
-
-const posts = (await getCollection('posts')).filter((post) => !post.data.draft).sort(
-	(a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
-);
 
 export async function getStaticPaths() {
 
@@ -19,9 +14,9 @@ export async function getStaticPaths() {
 	const tags = [... new Set((posts.map((post) => ((post.data.tags || '').split(' ')))).flat())].sort()
 
 	return tags.map((tag) => ({
-		params: { tag: tag },
+		params: { tag: encodeURIComponent(tag).replaceAll('%','') },
 		props: { 
-			tag: encodeURIComponent(tag), 
+			tags: tags,
 			tagString: tag,
 			tagPosts: posts.filter((post) => (
 				(post.data.tags || '').split(' ').includes(tag))
@@ -30,9 +25,7 @@ export async function getStaticPaths() {
 	}));
 }
 
-const tags = [... new Set((posts.map((post) => ((post.data.tags || '').split(' ')))).flat())].sort()
-
-const { tag, tagString, tagPosts } = Astro.props;
+const { tags, tagString, tagPosts } = Astro.props;
 ---
 
 <BaseLayout title={SITE_TITLE} description={SITE_DESCRIPTION}>

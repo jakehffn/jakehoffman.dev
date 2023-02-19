@@ -9,6 +9,6 @@ const { tags, currentTag } = Astro.props;
 
 <div class="flex flex-wrap mb-4 w-full select-none">
     {
-        tags.map((tag) => (<a href={"/tags/" + encodeURIComponent(tag)} class={"rounded-full px-3 py-1 m-1 hover:bg-main-subtle " + ((currentTag !== tag) ? "bg-main-code-bg" : "bg-main-subtle")}><code>{tag}</code></a>))
+        tags.map((tag) => (<a href={"/tags/" + encodeURIComponent(tag).replaceAll('%','')} class={"rounded-full px-3 py-1 m-1 hover:bg-main-subtle " + ((currentTag !== tag) ? "bg-main-code-bg" : "bg-main-subtle")}><code>{tag}</code></a>))
     }
 </div>

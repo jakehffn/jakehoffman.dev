@@ -3,7 +3,7 @@ title: "CMake Guide"
 description: "Here is a sample of some basic Markdown syntax that can be used when writing Markdown content in Astro."
 pubDate: "June 30 2022"
 updatedDate: "Aug 08 2022"
-draft: false
+draft: true
 tags: "C++ C G++ CMake Git C#"
 ---
 
