@@ -17,7 +17,8 @@ module.exports = {
 			'alt-accent': '#dd8970',
 			'main-subtle': '#454f6d',
 			'main-subtle-hover': '#2d3347',
-			'main-code-bg': '#282a36'
+			'main-code-bg': '#282a36',
+			// 'footer-text'
 		},
 		fontFamily: {
 			sans: ['sans-serif'],
