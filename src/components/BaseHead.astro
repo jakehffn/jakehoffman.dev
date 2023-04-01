@@ -11,14 +11,25 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
 const { title, description, image = '/OpenGraphImage.png' } = Astro.props;
 ---
-<!-- Google tag (gtag.js) -->
-<script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-5SHY77NZ1S"></script>
-<script is:raw>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-analytics.js";
+  
+  const firebaseConfig = {
+    apiKey: "AIzaSyDSFuWCK3w0bkM-K8atbePTZ2wezlGQ5JU",
+    authDomain: "jakethoffman-7b7ab.firebaseapp.com",
+    databaseURL: "https://jakethoffman-7b7ab.firebaseio.com",
+    projectId: "jakethoffman-7b7ab",
+    storageBucket: "jakethoffman-7b7ab.appspot.com",
+    messagingSenderId: "22222103514",
+    appId: "1:22222103514:web:922fceb2b84f4c6b3716e3",
+    measurementId: "G-5SHY77NZ1S"
+  };
 
-  gtag('config', 'G-5SHY77NZ1S');
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+  // logEvent(analytics, 'page_loaded');
 </script>
 <!-- Global Metadata -->
 <meta charset="utf-8" />
