@@ -8,7 +8,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 const posts = (await getCollection('posts')).filter((post) => !post.data.draft).sort(
 	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
 );
-const tags = [... new Set((posts.map((post) => ((post.data.tags || '').split(' ')))).flat())].sort()
+const tags = [... new Set((posts.map((post) => ((post.data.tags || '').split(',').map((tag) => tag.trim())))).flat())].sort()
 ---
 
 <BaseLayout title={SITE_TITLE} description={SITE_DESCRIPTION}>

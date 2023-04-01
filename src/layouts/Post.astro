@@ -2,22 +2,25 @@
 import type { CollectionEntry } from 'astro:content';
 import FormattedDate from '../components/FormattedDate.astro';
 import BaseLayout from './BaseLayout.astro';
+import TagList from '../components/TagList.astro';
 
-type Props = CollectionEntry<'posts'>['data'];
+type Props = CollectionEntry<'posts'>;
 
-const { title, description, pubDate, updatedDate} = Astro.props;
+const post = Astro.props;
+const tags = (post.data.tags || '').split(',').map((tag) => tag.trim()).sort()
 ---
 
-<BaseLayout title={title} description={description}>
+<BaseLayout title={post.data.title} description={post.data.description}>
 	<main>
 		<article class="[&>*:last-child]:mb-1">
 			<div class="mb-4">
-				<h1 class="font-bold text-4xl">{title}</h1>
-				<span class="text-xs font-bold"><FormattedDate date={pubDate} /></span>
+				<h1 class="font-bold text-4xl">{post.data.title}</h1>
+				<TagList tags={tags} />
+				<span class="text-xs font-bold"><FormattedDate date={post.data.pubDate} /></span>
 				{
-					updatedDate && (
+					post.data.updatedDate && (
 						<div class="italic text-xs">
-							Last updated on <FormattedDate date={updatedDate} />
+							Last updated on <FormattedDate date={post.data.updatedDate} />
 						</div>
 					)
 				}
