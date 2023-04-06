@@ -9,7 +9,6 @@ type Props = CollectionEntry<'posts'>;
 const post = Astro.props;
 const tags = (post.data.tags || '').split(',').map((tag) => tag.trim()).sort()
 ---
-
 <BaseLayout title={post.data.title} description={post.data.description}>
 	<main>
 		<article class="[&>*:last-child]:mb-1">

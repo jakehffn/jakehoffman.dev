@@ -1,6 +1,12 @@
 ---
+import { CollectionEntry, getCollection } from 'astro:content';
 import HeaderLink from './HeaderLink.astro';
 import { SITE_TITLE } from '../consts';
+
+const posts = (await getCollection('posts')).filter((post) => !post.data.draft).sort(
+	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
+const mostRecentDate = (posts.pop()?.data.pubDate.getTime().toString() || "a");
 ---
 
 <header class="w-full lg:w-1/6 xl:w-[12.5%] pb-4 select-none">
@@ -12,6 +18,17 @@ import { SITE_TITLE } from '../consts';
 	</div>
 	<nav class="flex flex-row lg:flex-col">
 		<HeaderLink href="/" class="pr-4 pt-2 hover:text-main-text-hover">About</HeaderLink>
-		<HeaderLink href="/posts" class="pr-4 pt-2 hover:text-main-text-hover">Posts</HeaderLink>
+		<div class="flex flex-row items-center">
+			<HeaderLink href="/posts" class="pr-2 py-2 hover:text-main-text-hover" id="posts-button">Posts</HeaderLink>
+			<div class="w-2 h-2 rounded-full bg-main-accent" id="blinker"><div class="w-2 h-2 rounded-full animate-ping bg-main-accent"></div></div>
+		</div>
+		<script mostRecentDate={mostRecentDate} is:raw>
+
+			const blinker = document.getElementById("blinker");
+			if (window.localStorage.getItem('last-posts-visit') > document.currentScript.getAttribute('mostRecentDate')) {
+				blinker.style.display = "none";
+				console.log("Make visible");
+			}
+		</script>
 	</nav>
 </header>
