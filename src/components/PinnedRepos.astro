@@ -3,17 +3,17 @@ import LoadingRepo from '../components/LoadingRepo.astro';
 ---
 <div>
     <div class="w-full flex flex-col md:flex-row lg:flex-col xl:flex-row mt-8 justify-around" id="loading-pin">
-        <a class="w-full md:w-1/2 lg:w-full xl:w-1/2 sm:px-12 md:px-0 md:pr-4 lg:pr-0 mb-6 md:mb-0 lg:mb-4 xl:mb-0" href="">
+        <a class="py-2 md:w-1/2 lg:w-full xl:w-1/2 sm:mx-12 md:mx-0 md:mr-4 lg:mr-0 mb-6 md:mb-0 lg:mb-4 xl:mb-0 rounded-lg border-2 border-main-subtle" href="">
             <LoadingRepo/>
         </a>
-        <a class="w-full md:w-1/2 lg:w-full xl:w-1/2 sm:px-12 md:px-0 md:pl-4 lg:pl-0 xl:p-0 xl:pl-4" href="">
+        <a class="py-2 md:w-1/2 lg:w-full xl:w-1/2 sm:mx-12 md:mx-0 md:ml-4 lg:ml-0 xl:m-0 xl:ml-4 rounded-lg border-2 border-main-subtle" href="">
             <LoadingRepo/>
         </a>
     </div>
 
     <div class="w-full flex flex-col items-stretch md:flex-row lg:flex-col xl:flex-row mt-8 justify-around hidden" id="loaded-pin">
         <a class="md:w-1/2 lg:w-full xl:w-1/2 sm:mx-12 md:mx-0 md:mr-4 lg:mr-0 mb-6 md:mb-0 lg:mb-4 xl:mb-0 rounded-lg border-2 border-main-subtle hover:border-main-text-hover" id="repo-url-1" href="">
-            <div class="w-full p-2">
+            <div class="w-full px-2 py-1">
                 <div class="flex w-full justify-between">
                     <div class="flex items-center">
                         <div class="basis-1/3 m-2 font-bold" id="repo-title-1"></div>
@@ -32,7 +32,7 @@ import LoadingRepo from '../components/LoadingRepo.astro';
             </div>
         </a>
         <a class="md:w-1/2 lg:w-full xl:w-1/2 sm:mx-12 md:mx-0 md:ml-4 lg:ml-0 xl:m-0 xl:ml-4 rounded-lg border-2 border-main-subtle hover:border-main-text-hover" id="repo-url-2" href="">
-            <div class="w-full p-2">
+            <div class="w-full px-2 py-1">
                 <div class="flex w-full justify-between">
                     <div class="flex items-center">
                         <div class="basis-1/3 m-2 font-bold" id="repo-title-2"></div>
@@ -89,7 +89,6 @@ import LoadingRepo from '../components/LoadingRepo.astro';
                 pinStars2.innerText = jsonValue[1].stars
                 pinDesc2.innerText = jsonValue[1].description
 
-                
                 loadingPin.style.display = "none";
                 loadedPin.style.display = "flex";
             });
