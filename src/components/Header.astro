@@ -6,7 +6,7 @@ import { SITE_TITLE } from '../consts';
 const posts = (await getCollection('posts')).filter((post) => !post.data.draft).sort(
 	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
 );
-const mostRecentDate = (posts.pop()?.data.pubDate.getTime().toString() || "a");
+const mostRecentDate = (posts.pop()?.data.pubDate.getTime().toString() || "none");
 ---
 
 <header class="w-full lg:w-1/6 xl:w-[12.5%] pb-4 select-none">
@@ -25,9 +25,11 @@ const mostRecentDate = (posts.pop()?.data.pubDate.getTime().toString() || "a");
 		<script mostRecentDate={mostRecentDate} is:raw>
 
 			const blinker = document.getElementById("blinker");
-			if (window.localStorage.getItem('last-posts-visit') > document.currentScript.getAttribute('mostRecentDate')) {
+			const lastPostsVisit = window.localStorage.getItem('last-posts-visit');
+			const mostRecentDate = document.currentScript.getAttribute('mostRecentDate');
+
+			if ((lastPostsVisit > mostRecentDate && lastPostsVisit != null) || mostRecentDate === "none") {
 				blinker.style.display = "none";
-				console.log("Make visible");
 			}
 		</script>
 	</nav>
