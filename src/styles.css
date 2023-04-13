@@ -5,7 +5,7 @@
 @layer base {
 
     * {
-        @apply selection:bg-main-accent-hover text-sm sm:text-base
+        @apply selection:bg-main-accent-hover text-base
     }
     
     pre {
