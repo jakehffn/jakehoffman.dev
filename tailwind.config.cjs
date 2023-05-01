@@ -20,26 +20,15 @@ module.exports = {
 			// 'main-subtle-hover': '#2d3347',
 			// 'main-code-bg': '#282a36',
 
-			'main-bg': '#434A42',
-			'main-accent': '#586156',
-			'main-accent-hover': '#9d263a',
-			'main-text': '#C4BBAF',
-			'main-text-hover': '#626C66',
+			'main-bg': '#2C363F',
+			'main-accent': '#E75A7C',
+			'main-accent-hover': '#E75A7C',
+			'main-text': '#F2F5EA',
+			'main-text-hover': '#9fa0a1',
 			'alt-accent': '#ACA885',
-			'main-subtle': '#586156',
-			'main-subtle-hover': '#626C66',
-			'main-code-bg': '#586156',
- 
-			// Browns
-			// 'main-bg': '#5A2A27',
-			// 'main-accent': '#A5978B',
-			// 'main-accent-hover': '#5C4742',
-			// 'main-text': '#C4BBAF',
-			// 'main-text-hover': '#A5978B',
-			// 'alt-accent': '#8D5B4C',
-			// 'main-subtle': '#8D5B4C',
-			// 'main-subtle-hover': '#5C4742',
-			// 'main-code-bg': '#8D5B4C'
+			'main-subtle': '#4C5C6B',
+			'main-subtle-hover': '#667B8F',
+			'main-code-bg': '#3B4854'
 		},
 		fontFamily: {
 			sans: ['Roboto', 'Helvetica', 'sans-serif'],
