@@ -21,8 +21,9 @@ module.exports = {
 			// 'footer-text'
 		},
 		fontFamily: {
-			sans: ['sans-serif'],
+			sans: ['OpenSans', 'sans-serif'],
 			serif: ['Times New Roman', 'serif'],
+			mono: ['SFMono-Regular', 'Consolas']
 		},
 		extend: {
 			spacing: {
