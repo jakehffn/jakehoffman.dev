@@ -20,15 +20,15 @@ module.exports = {
 			// 'main-subtle-hover': '#2d3347',
 			// 'main-code-bg': '#282a36',
 
-			'main-bg': '#2C363F',
-			'main-accent': '#E75A7C',
+			'main-bg': '#181b1f',
+			'main-accent': '#ea3957',
 			'main-accent-hover': '#E75A7C',
-			'main-text': '#F2F5EA',
-			'main-text-hover': '#9fa0a1',
+			'main-text': '#bfc2b9',
+			'main-text-hover': '#7e817b',
 			'alt-accent': '#ACA885',
 			'main-subtle': '#4C5C6B',
-			'main-subtle-hover': '#667B8F',
-			'main-code-bg': '#3B4854'
+			'main-subtle-hover': '#353B44',
+			'main-code-bg': '#272B32'
 		},
 		fontFamily: {
 			sans: ['Roboto', 'Helvetica', 'sans-serif'],
