@@ -1,26 +1,32 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import PinnedRepos from '../components/PinnedRepos.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+
+import { getCollection } from 'astro:content';
+import TagList from '../components/TagList.astro';
+import PostList from '../components/PostList.astro';
+
+const posts = (await getCollection('posts')).filter((post) => !post.data.draft).sort(
+	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
+const tags = [... new Set((posts.map((post) => ((post.data.tags || '').split(',').map((tag) => tag.trim())))).flat())].sort()
 ---
 
 <BaseLayout title={SITE_TITLE} description={SITE_DESCRIPTION} >
 	<body>
 		<main class="flex flex-col h-full">
 
-			<h1 class="text-5xl md:text-6xl">Hello!</h1>
-			<h2>I'm Jake,</h2>
-			<p> and I'm a Software Engineer currently interested in graphics programming, assembly, and compilers.</p>
+			<!-- <h1 class="text-5xl md:text-6xl">Hello!</h1> -->
+			<p>Welcome to my web page. My name is Jake Hoffman and I am a software engineer.</p>
 
 			<p>
-				I've messed around with plenty of tools in the past, but currently I've been doing a lot of work with <span class="font-bold">Python</span> and <span class="font-bold">C++</span>. 
-				I've also been intrigued with making a <a href="https://github.com/jakehffn/NoEngine">game/game-engine</a>, and have been building out some features of one as I've been learning <span class="font-bold">OpenGL</span> and the lovely entity-component-system library <a href="https://github.com/skypjack/entt">EnTT</a>.
-			</p>
+				I am interested in low-level programming, graphics, and game design, and am a big fan of the C++ library <a href="https://github.com/skypjack/entt">EnTT</a>. 
+				If you're interested, some of my work can be found on my <a href="https://github.com/jakehffn">GitHub profile</a>.</p>
 			
-			<p>If you're interested, take a look at some of the odds and ends I've built for the web <a href="https://projects.jakethoffman.com">here</a>. Sometimes I am looking to make a quick mock-up of something I thought of, or just want to see how something will look. Regardless, I thought it might be nicer to throw it up on a separate page so others can see as well.</p>
-			
-			<p class="mb-0">Connect with me on <a href="https://www.linkedin.com/in/jake-t-hoffman/" target="_blank">LinkedIn</a> if you're interested in working together; or email me at <a href="mailto: jakehffn@gmail.com"><code>jakehffn@gmail.com</code></a>.</p>
-			<PinnedRepos />
+			<p class="mb-0"> Feel free to email me at <a href="mailto: jakehffn@gmail.com"><code>jakehffn@gmail.com</code></a>.</p>
+			<div class="pb-8 border-b mb-4"></div>
+			<TagList tags={tags} />
+			<PostList posts={posts} />
 		</main>
 	</body>
 </BaseLayout>

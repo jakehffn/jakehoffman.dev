@@ -4,32 +4,8 @@
 
 @layer base {
 
-    @font-face {
-        font-family: Roboto;
-        font-weight: 400;
-        src: url(/fonts/Roboto/Roboto-Regular.ttf);
-    }
-
-    @font-face {
-        font-family: Roboto;
-        font-weight: 700;
-        src: url(/fonts/Roboto/Roboto-Bold.ttf);
-    }
-
-    @font-face {
-        font-family: Roboto-Mono;
-        font-weight: 400;
-        src: url(/fonts/Roboto_Mono/static/RobotoMono-Regular.ttf);
-    }
-
-    @font-face {
-        font-family: Roboto-Mono;
-        font-weight: 700;
-        src: url(/fonts/Roboto_Mono/static/RobotoMono-Bold.ttf);
-    }
-
     * {
-        @apply selection:bg-main-accent-hover text-base transition-colors
+        @apply selection:bg-main-accent text-base transition-colors
     }
     
     pre {

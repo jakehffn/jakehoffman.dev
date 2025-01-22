@@ -9,28 +9,12 @@ const posts = (await getCollection('posts')).filter((post) => !post.data.draft).
 const mostRecentDate = (posts.pop()?.data.pubDate.getTime().toString() || "none");
 ---
 
-<header class="w-full lg:w-1/6 xl:w-[12.5%] pb-4 select-none">
-	<div class="flex items-center text-4xl lg:text-2xl lg:pb-2">
-		<h2 class="italic font-bold pr-2 !pb-0">
-			{SITE_TITLE}
-		</h2>
-		<!-- <div class="bg-main-accent w-5 h-12 ml-2"></div> -->
+<header class="w-full pb-2 select-none">
+	<div class="flex items-center text-4xl lg:text-2xl">
+		<a href="/">
+			<h2 class="italic font-bold pr-2 !pb-0">
+				{SITE_TITLE}
+			</h2>
+		</a>
 	</div>
-	<nav class="flex flex-row lg:flex-col">
-		<HeaderLink href="/" class="pr-4 pt-2 hover:text-main-text-hover">About</HeaderLink>
-		<div class="flex flex-row items-center">
-			<HeaderLink href="/posts" class="pr-2 py-2 hover:text-main-text-hover" id="posts-button">Posts</HeaderLink>
-			<div class="w-2 h-2 rounded-full bg-main-accent" id="blinker"><div class="w-2 h-2 rounded-full animate-ping bg-main-accent"></div></div>
-		</div>
-		<script mostRecentDate={mostRecentDate} is:raw>
-
-			const blinker = document.getElementById("blinker");
-			const lastPostsVisit = window.localStorage.getItem('last-posts-visit');
-			const mostRecentDate = document.currentScript.getAttribute('mostRecentDate');
-
-			if ((lastPostsVisit > mostRecentDate && lastPostsVisit != null) || mostRecentDate === "none") {
-				blinker.style.display = "none";
-			}
-		</script>
-	</nav>
 </header>

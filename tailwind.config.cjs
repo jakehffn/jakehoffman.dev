@@ -31,9 +31,9 @@ module.exports = {
 			'main-code-bg': '#272B32'
 		},
 		fontFamily: {
-			sans: ['Roboto', 'Helvetica', 'sans-serif'],
+			sans: ['Helvetica', 'sans-serif'],
 			serif: ['Times New Roman', 'serif'],
-			mono: ['Roboto-Mono', 'Courier', 'sans-serif']
+			mono: ['Courier', 'sans-serif']
 		},
 		extend: {
 			spacing: {
