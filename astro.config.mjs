@@ -12,5 +12,5 @@ import tailwind from "@astrojs/tailwind";
 export default defineConfig({
   site: 'https://jakehoffman.dev',
   integrations: [mdx(), sitemap(), react(), tailwind()],
-  markdown: { shikiConfig: { theme: 'dracula-soft' } },
+  markdown: { shikiConfig: { theme: 'everforest-dark' } },
 });

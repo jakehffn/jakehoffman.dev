@@ -70,7 +70,7 @@
     }
 
     mark {
-        @apply bg-main-accent-hover text-main-text;
+        @apply bg-main-accent text-main-bg;
     }
 
     blockquote {
